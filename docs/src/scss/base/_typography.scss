@@ -67,7 +67,7 @@ hr {
 
 .typ {
 	max-width: 800px;
-	margin-bottom: $marg;
+	margin-bottom: $pad;
 	font-size: 1.1em;
 	&.-text-medium {
 		font-size: 1.4em;
@@ -82,7 +82,7 @@ hr {
 		text-align: right;
 	}
 	&.-center {
-		margin: 0 auto $marg;
+		margin: 0 auto $pad;
 	}
 	&.-full-width {
 		max-width: 100%;
@@ -127,6 +127,6 @@ hr {
 		margin-top: 1em;
 	}
 	.typ-download {
-		margin: $marg-l 0;
+		margin: $pad-l 0;
 	}
 }

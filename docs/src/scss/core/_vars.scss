@@ -2,7 +2,7 @@
 // =debug mode
 // ====================================================================
 
-$debug-mode: true;
+$debug-mode: false;
 
 
 
@@ -160,25 +160,10 @@ $z-layers: (
 );
 
 // grid margin and padding
-$pad-grid: 20px;
-$marg-grid: 20px;
+$grid-gutter: 16px;
 
-// margin
-$marg: 20px;
-$marg-xxxs: $marg / 8;
-$marg-xxs: $marg / 6;
-$marg-xs: $marg / 4;
-$marg-s: $marg / 2;
-$marg-sl: $marg - ($marg / 3);
-$marg-m: $marg + ($marg / 2);
-$marg-l: $marg * 2;
-$marg-xl: $marg * 3;
-$marg-xxl: $marg * 4;
-$marg-xxxl: $marg * 5;
-$marg-xxxxl: $marg * 6;
-
-// padding
-$pad: 20px;
+// margin/padding
+$pad: $grid-gutter;
 $pad-xxxs: $pad / 8;
 $pad-xxs: $pad / 6;
 $pad-xs: $pad / 4;
@@ -194,3 +179,28 @@ $pad-xxxxl: $pad * 6;
 // header
 $header-ml-w: 300px;
 $header-l-w: 400px;
+
+// gridy
+$gyVars: (
+		prefix          : gy,
+		helperPrefix    : gy-h,
+		wrapWidth       : 1200px,
+		wrapName        : wrap,
+		gridName        : g,
+		colName         : c,
+		colTot          : 12,
+		orderName       : order,
+		offsetName      : off,
+		gutter          : $grid-gutter, // total
+		colBottom       : $grid-gutter, // usually same as gutter
+		bp              : (
+			// careful: do not use the letter 'g' or 'c' here, it would break the grid
+			// because it's the gridName and colName
+				s       : 400px,
+				m       : 768px,
+				l       : 1100px
+		)
+);
+
+// generate grid
+@include gy-generator($gyVars);

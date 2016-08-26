@@ -1,10 +1,9 @@
-#{$all-buttons},
-.btn {
+%btn {
 	appearance: none;
 	user-select: none;
 	cursor: pointer;
 	display: inline-block;
-	margin: $marg-xs;
+	margin: $pad-xs;
 	padding: $small-spacing/2 $base-spacing/2;
 	border-style: solid;
 	border-width: 1px;
@@ -21,14 +20,6 @@
 	vertical-align: middle;
 	white-space: nowrap;
 	border-radius: $base-border-radius;
-	
-	&.-github {
-	    &:before {
-	        @include single-icon(n, n, n, 0.9em, $icon-github);
-		    margin: 0 $marg-s 0 0;
-	    }
-	}
-
 	&:hover,
 	&:focus {
 		background: $black;
@@ -45,8 +36,22 @@
 	}
 }
 
+#{$all-buttons} {
+	@extend %btn;
+}
+
+.btn {
+	@extend %btn;
+	&.-github {
+	    &:before {
+	        @include single-icon(n, n, n, 0.9em, $icon-github);
+		    margin: 0 $pad-s 0 0;
+	    }
+	}
+}
+
 .btn-ico {
-	margin: 0 0 $marg-s $marg-s;
+	margin: 0 0 $pad-s $pad-s;
 	color: lighten($grey-dark, 10%);
 	&:focus,
 	&:active,
@@ -55,7 +60,7 @@
 	}
     &:before {
         @include single-icon(n, n, n, .9em);
-	    margin: 0 $marg-xs 0 0;
+	    margin: 0 $pad-xs 0 0;
     }
 	&.-source {
 		&:before {

@@ -58,10 +58,18 @@
 							var $docs = this.$root.$els.wrap.querySelectorAll('.doc');
 							Array.prototype.forEach.call($docs, function($doc, i){
 								var $docGrid    = $doc.querySelector('.doc__grid'),
-									docGridCnt  = this.$root.escapeHtml($docGrid.innerHTML),
+									docGridCnt  = this.$root.escapeDocs($docGrid.innerHTML),
 									docSource   = $doc.querySelector('.doc__source code');
 
-							docSource.innerHTML = docGridCnt;
+								docSource.innerHTML = docGridCnt;
+							}.bind(this));
+
+							// clean up any other pre code
+							var $docCustomSource = this.$root.$els.wrap.querySelectorAll('.doc-custom__source code');
+							Array.prototype.forEach.call($docCustomSource, function($docSource, i){
+								var docSourceCnt = this.$root.escapeDocsCustom($docSource.innerHTML);
+
+								$docSource.innerHTML = docSourceCnt;
 							}.bind(this));
 
 							// code highlighter
@@ -101,11 +109,22 @@
 			return {};
 		},
 		methods: {
-			escapeHtml: function(unsafe) {
+			escapeDocs: function(unsafe) {
 				return unsafe
 					.replace(/<div class="doc__box".*?<\/div>/g, '...')
 					.replace(/^\t\t/gm, '') // remove first two tabs for each line
-					.replace(/^\t/gm, '  ') // replace all other tabs with two spaces
+					.replace(/\t/g, '  ') // replace all other tabs with two spaces
+					.replace(/^\s+|\s+$/g, '')
+					.replace(/&/g, '&amp;')
+					.replace(/</g, '&lt;')
+					.replace(/>/g, '&gt;')
+					.replace(/"/g, '&quot;')
+					.replace(/'/g, '&#039;');
+			},
+			escapeDocsCustom: function(unsafe) {
+				return unsafe
+					.replace(/^\t\t\t\t/gm, '') // remove first two tabs for each line
+					.replace(/\t/gm, '  ') // replace all other tabs with two spaces
 					.replace(/^\s+|\s+$/g, '')
 					.replace(/&/g, '&amp;')
 					.replace(/</g, '&lt;')

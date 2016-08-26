@@ -11,15 +11,15 @@
 //     @include flow(40px, 20px);
 // }
 
-@mixin flow($marg-m: ($marg / 2), $marg-d: $marg, $mq: $m, $type: div) {
-	margin-top: (-$marg-m);
+@mixin flow($pad-m: ($pad / 2), $pad-d: $pad, $mq: $m, $type: div) {
+	margin-top: (-$pad-m);
 	> #{$type} {
-		margin-top: $marg-m;
+		margin-top: $pad-m;
 	}
 	@include mq($mq) {
-		margin-top: (-$marg-d);
+		margin-top: (-$pad-d);
 		> #{$type} {
-			margin-top: $marg-d;
+			margin-top: $pad-d;
 		}
 	}
 }
