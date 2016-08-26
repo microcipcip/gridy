@@ -1,0 +1,23 @@
+// ====================================================================
+// =responsive, multipurpose mixin
+// ====================================================================
+
+// you can use this for outputting a different value
+// for a property of your choice, on a given breakpoint.
+//
+// example:
+// .element {
+//     @include r(padding-top, 10px, $m, 40px);           // padding-top 10px on mobile, 40px on tablet
+//     @include r(margin, 20px, $m, 40px, $xl, 140px);    // margin 20px on mobile, 40px on tablet, 140px on desktop
+// }
+
+@mixin r($property, $value1, $mq2:n, $value2:n, $mq3:n, $value3:n, $mq4:n, $value4:n, $mq5:n, $value5:n, $mq6:n, $value6:n, $mq7:n, $value7:n, $mq8:n, $value8:n) {
+	@if ($value1 != n) { #{$property}: $value1; }
+	@if ($mq2 != n) { @include mq($mq2) { #{$property}: $value2; } }
+	@if ($mq3 != n) { @include mq($mq3) { #{$property}: $value3; } }
+	@if ($mq4 != n) { @include mq($mq4) { #{$property}: $value4; } }
+	@if ($mq5 != n) { @include mq($mq5) { #{$property}: $value5; } }
+	@if ($mq6 != n) { @include mq($mq6) { #{$property}: $value6; } }
+	@if ($mq7 != n) { @include mq($mq7) { #{$property}: $value7; } }
+	@if ($mq8 != n) { @include mq($mq8) { #{$property}: $value8; } }
+}

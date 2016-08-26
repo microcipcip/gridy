@@ -1,0 +1,23 @@
+// ====================================================================
+// =cf
+// ====================================================================
+
+// you can use this for clearfix floated cols
+//
+// example:
+// .element {
+//     @include cf();
+// }
+
+@mixin cf() {
+	*zoom: 1;
+
+	&:before, &:after {
+		content: '';
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}

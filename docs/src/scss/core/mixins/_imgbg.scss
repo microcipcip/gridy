@@ -1,0 +1,16 @@
+// ====================================================================
+// =imgbg
+// ====================================================================
+
+// you can use this for setting width/height and bg image
+//
+// example:
+// .element {
+//     @include imgbg('general/bg.png');
+// }
+
+@mixin imgbg($url) {
+	width: image-width($url);
+	height: image-height($url);
+	background-image: image-url($url);
+}

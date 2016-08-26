@@ -1,0 +1,37 @@
+{
+  "name": "Gridy",
+  "version": "0.9.0",
+  "description": "A Flexbox Gridy System",
+  "author": "http://www.jertix.org",
+  "main": "gulpfile.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:microcipcip/gridy.git"
+  },
+  "devDependencies": {
+    "del": "^2.2.2",
+    "es6-promise": "^3.2.1",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-changed": "^1.3.2",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-concat": "^2.6.0",
+    "gulp-css-base64": "^1.3.4",
+    "gulp-css-image-dimensions": "^1.1.4",
+    "gulp-header": "^1.8.8",
+    "gulp-if": "^2.0.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-json-editor": "^2.2.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.8",
+    "jshint": "^2.9.2",
+    "jshint-stylish-ex": "^0.2.0",
+    "yargs": "^4.8.1"
+  }
+}

@@ -1,0 +1,75 @@
+#{$all-buttons},
+.btn {
+	appearance: none;
+	user-select: none;
+	cursor: pointer;
+	display: inline-block;
+	margin: $marg-xs;
+	padding: $small-spacing/2 $base-spacing/2;
+	border-style: solid;
+	border-width: 1px;
+	border-image: image-url('general/borders.png') 2 repeat;
+	background: repeating-linear-gradient(-30deg, transparentize($white, .4) 0px, transparentize($black, .99) 5px);
+	color: $black;
+	font-family: $base-font-family;
+	font-size: 1em;
+	text-align: center;
+	text-decoration: none;
+	-webkit-font-smoothing: antialiased;
+	font-weight: 600;
+	line-height: 1;
+	vertical-align: middle;
+	white-space: nowrap;
+	border-radius: $base-border-radius;
+	
+	&.-github {
+	    &:before {
+	        @include single-icon(n, n, n, 0.9em, $icon-github);
+		    margin: 0 $marg-s 0 0;
+	    }
+	}
+
+	&:hover,
+	&:focus {
+		background: $black;
+		color: $white;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
+
+		&:hover {
+			background-color: $action-color;
+		}
+	}
+}
+
+.btn-ico {
+	margin: 0 0 $marg-s $marg-s;
+	color: lighten($grey-dark, 10%);
+	&:focus,
+	&:active,
+	&:hover {
+		color: $black;
+	}
+    &:before {
+        @include single-icon(n, n, n, .9em);
+	    margin: 0 $marg-xs 0 0;
+    }
+	&.-source {
+		&:before {
+			content: $icon-embed;
+		}
+		&.-expand {
+			&:before {
+				content: $icon-embed2;
+			}
+		}
+	}
+	&.-codepen {
+		&:before {
+			content: $icon-codepen;
+		}
+	}
+}

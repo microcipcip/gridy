@@ -1,0 +1,21 @@
+// ====================================================================
+// =cycle
+// ====================================================================
+
+// you can use this for clearing gallery-like layouts
+//
+// example:
+// .element {
+//     @include cycle(2, $sl2, 3, $m, 4);  // by default, clear every 2, when MQ is $sl2, clear every 3, when MQ is $m, clear every 4
+// }
+
+@mixin cycle($value1, $mq2:n, $value2:n, $mq3:n, $value3:n, $mq4:n, $value4:n, $mq5:n, $value5:n, $mq6:n, $value6:n, $mq7:n, $value7:n, $mq8:n, $value8:n) {
+	@if ($value1 != n) { &:nth-child(#{$value1}n+1) { clear: left; } }
+	@if ($mq2 != n) { @include mq($mq2) { &:nth-child(n) { clear: none; } &:nth-child(#{$value2}n+1) { clear: left; } } }
+	@if ($mq3 != n) { @include mq($mq3) { &:nth-child(n) { clear: none; } &:nth-child(#{$value3}n+1) { clear: left; } } }
+	@if ($mq4 != n) { @include mq($mq4) { &:nth-child(n) { clear: none; } &:nth-child(#{$value4}n+1) { clear: left; } } }
+	@if ($mq5 != n) { @include mq($mq5) { &:nth-child(n) { clear: none; } &:nth-child(#{$value5}n+1) { clear: left; } } }
+	@if ($mq6 != n) { @include mq($mq6) { &:nth-child(n) { clear: none; } &:nth-child(#{$value6}n+1) { clear: left; } } }
+	@if ($mq7 != n) { @include mq($mq7) { &:nth-child(n) { clear: none; } &:nth-child(#{$value7}n+1) { clear: left; } } }
+	@if ($mq8 != n) { @include mq($mq8) { &:nth-child(n) { clear: none; } &:nth-child(#{$value8}n+1) { clear: left; } } }
+}

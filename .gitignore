@@ -1,0 +1,12 @@
+# IDE, temp files
+_notes
+._*.*
+/dbg/
+.project
+*.cpf
+*.cpfs
+*.DS_Store
+*.idea
+
+# node
+**/node_modules/*

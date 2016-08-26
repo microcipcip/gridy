@@ -1,0 +1,31 @@
+// ====================================================================
+// =gridy
+// ====================================================================
+
+// mixins
+@import "gridy-mixins";
+
+// variables
+$gyVars: (
+		prefix          : gy,
+		helperPrefix    : gy-h,
+		wrapWidth       : 1400px,
+		wrapName        : wrap,
+		gridName        : g,
+		colName         : c,
+		colTot          : 12,
+		orderName       : order,
+		offsetName      : off,
+		gutter          : 16px, // total
+		colBottom       : 16px, // usually same as gutter
+		bp              : (
+				// careful: do not use the letter 'g' or 'c' here, it would break the grid
+				// because it's the gridName and colName
+				s       : 400px,
+				m       : 768px,
+				l       : 1100px
+		)
+);
+
+// generate grid
+@include gy-generator($gyVars);

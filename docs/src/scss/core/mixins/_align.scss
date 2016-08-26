@@ -1,0 +1,27 @@
+// ====================================================================
+// =align
+// ====================================================================
+
+// you can use this for align vertically/horizontally an element inside a container
+//
+// example:
+// .element {
+//     @include align();
+// }
+
+@mixin align($direction: both) {
+	position: absolute;
+	transform-style: preserve-3d;
+
+	@if index("horizontal" "h", $direction) {
+		left: 50%;
+		transform: translateX(-50%);
+	} @else if index("vertical" "v", $direction) {
+		top: 50%;
+		transform: translateY(-50%);
+	} @else {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}

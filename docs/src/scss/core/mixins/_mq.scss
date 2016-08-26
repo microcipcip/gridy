@@ -1,0 +1,71 @@
+// ====================================================================
+// =media queries
+// ====================================================================
+
+// example:
+// .element {
+//     @include mq($xs) { }        // min-width
+//     @include mq(n, $s) { }      // max-width
+//     @include mq($ml, n) { }     // min-width
+//     @include mq($ml, $xl) { }   // min-width and max-width
+//     @include mq(custom, "(min-height: 500px) and (max-height: 500px)") { }   // basically write whatever you want
+// }
+
+@mixin mq($min:n, $max:n) {
+	@if ($min == custom) {
+		@media only screen and #{$max} {
+			@content;
+		}
+	} @else if ($min != n and $max == n) {
+		@media only screen and (min-width: $min) {
+			@content;
+		}
+	} @else if ($min == n and $max != n) {
+		@media only screen and (max-width: $max - 1) {
+			@content;
+		}
+	} @else if ($min != n and $max != n) {
+		@media only screen and (min-width: $min) and (max-width: $max - 1) {
+			@content;
+		}
+	}
+}
+// debugging mode (see base/_utility.scss)
+@mixin mqd($debuggerName, $debuggerPosition) {
+	@if $debug-mode == true {
+		.debug-true {
+			position: relative;
+		}
+		// do not change this value (used on javascript functions)
+		@each $breakpoint in $breakpoints {
+			$breakpointLetter: nth($breakpoint, 1);
+			$breakpointValue: nth($breakpoint, 2);
+			@media only screen and (min-width: $breakpointValue) {
+				#{$debuggerName} {
+					&:after {
+						content: ' #{$breakpointValue}';
+					}
+					&:before {
+						content: '$#{$breakpointLetter}: ';
+					}
+				}
+			}
+		}
+		#{$debuggerName} {
+			z-index: 9999;
+			position: fixed;
+			#{$debuggerPosition}: 0;
+			right: 0;
+			padding: 5px 15px;
+			background: rgba(204, 204, 204, 0.5);
+			color: #000;
+			font-size: 14px;
+			font-weight: bold;
+			text-align: right;
+			&:before {
+				color: red;
+				text-transform: uppercase;
+			}
+		}
+	}
+}

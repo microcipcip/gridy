@@ -1,0 +1,362 @@
+// ====================================================================
+// =media queries
+// ====================================================================
+
+@mixin gy-mq($min: n, $max: n) {
+	@if ($min == custom) {
+		@media only screen and #{$max} {
+			@content;
+		}
+	} @else if ($min != n and $max == n) {
+		@media only screen and (min-width: $min) {
+			@content;
+		}
+	} @else if ($min == n and $max != n) {
+		@media only screen and (max-width: $max - 1) {
+			@content;
+		}
+	} @else if ($min != n and $max != n) {
+		@media only screen and (min-width: $min) and (max-width: $max - 1) {
+			@content;
+		}
+	}
+}
+
+
+
+// ====================================================================
+// =map set
+// ====================================================================
+
+// a map-set function (not included with Sass)
+// http://oddbird.net/2013/10/19/map-merge/
+@function gy-map-set($map, $key, $value) {
+	$new: ($key: $value);
+	@return map-merge($map, $new);
+}
+
+
+
+// ====================================================================
+// =base
+// ====================================================================
+
+@mixin gy-base($gyMap) {
+	// get vars
+	$prefix: map-get($gyMap, prefix);
+	$wrapName: map-get($gyMap, wrapName);
+	$wrapWidth: map-get($gyMap, wrapWidth);
+	$gridName: map-get($gyMap, gridName);
+	$colName: map-get($gyMap, colName);
+	$gutter: map-get($gyMap, gutter);
+	$colBottom: map-get($gyMap, colBottom);
+	
+	[#{$prefix}~="#{$wrapName}"] {
+		max-width: $wrapWidth;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: $gutter;
+		padding-right: $gutter;
+	}
+	[#{$prefix}*="#{$gridName}"] {
+		box-sizing: border-box;
+		display: flex;
+		flex-flow: row wrap;
+		margin-left: (-$gutter/2);
+		margin-right: (-$gutter/2);
+	}
+	[#{$prefix}*="#{$colName}"] {
+		box-sizing: border-box;
+		flex: 0 0 100%;
+		max-width: 100%;
+		padding: 0 ($gutter/2) $colBottom;
+	}
+	// if it is supposed to be auto or single column 100%
+	[#{$prefix}="#{$colName}"] {
+		flex: 1 1 0%;
+	}
+	// remove margin when nested
+	[#{$prefix}*="#{$gridName}"][#{$prefix}*="#{$colName}"] {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+
+
+// ====================================================================
+// =grid helpers
+// ====================================================================
+
+@mixin gy-grid-helpers($gyMap) {
+	// ger vars
+	$prefix: map-get($gyMap, prefix);
+	$gridName: map-get($gyMap, gridName);
+	$colName: map-get($gyMap, colName);
+	$helperPrefix: map-get($gyMap, helperPrefix);
+
+	// no spacing between cols : noGutter
+	&[#{$helperPrefix}~="#{$gridName}-no-gutter"] {
+		margin: 0;
+		> [#{$prefix}*="#{$colName}"] {
+			padding: 0;
+		}
+	}
+
+	// horizontal alignment
+	[#{$helperPrefix}~="#{$gridName}-center"] {
+		justify-content: center;
+	}
+	[#{$helperPrefix}~="#{$gridName}-right"] {
+		justify-content: flex-end;
+		align-self: flex-end;
+		margin-left: auto;
+	}
+	// vertical alignment
+	[#{$helperPrefix}~="#{$gridName}-top"] {
+		align-items: flex-start;
+	}
+	[#{$helperPrefix}~="#{$gridName}-middle"] {
+		align-items: center;
+	}
+	[#{$helperPrefix}~="#{$gridName}-bottom"] {
+		align-items: flex-end;
+	}
+
+	// orders
+	[#{$helperPrefix}~="#{$gridName}-reverse"] {
+		flex-direction: row-reverse;
+	}
+	[#{$helperPrefix}~="#{$gridName}-column"] {
+		flex-direction: column;
+		> [#{$prefix}*="#{$colName}"] {
+			flex-basis: auto;
+		}
+	}
+	[#{$helperPrefix}~="#{$gridName}-column-reverse"] {
+		flex-direction: column-reverse;
+	}
+
+	// spaces between and around cols
+	[#{$helperPrefix}~="#{$gridName}-space-between"] {
+		justify-content: space-between;
+	}
+	[#{$helperPrefix}~="#{$gridName}-space-around"] {
+		justify-content: space-around;
+	}
+
+	// equal heights columns
+	[#{$helperPrefix}~="#{$gridName}-equal-height"] > [#{$prefix}*="#{$colName}"] {
+		display: flex;
+	}
+	// removes the padding-bottom
+	[#{$helperPrefix}~="#{$gridName}-no-bottom"] > [#{$prefix}*="#{$colName}"] {
+		padding-bottom: 0;
+	}
+}
+
+
+
+// ====================================================================
+// =columns helpers
+// ====================================================================
+
+@mixin gy-col-helpers($gyMap) {
+	// ger vars
+	$prefix: map-get($gyMap, prefix);
+	$colName: map-get($gyMap, colName);
+	$colTot: map-get($gyMap, colTot);
+	$helperPrefix: map-get($gyMap, helperPrefix);
+
+	[#{$helperPrefix}~="#{$colName}-column"] {
+		display: flex;
+		flex-direction: column;
+	}
+	[#{$helperPrefix}~="#{$colName}-top"] {
+		align-self: flex-start;
+	}
+	[#{$helperPrefix}~="#{$colName}-middle"] {
+		align-self: center;
+	}
+	[#{$helperPrefix}~="#{$colName}-bottom"] {
+		align-self: flex-end;
+	}
+	[#{$helperPrefix}~="#{$colName}-first"] {
+		order: -1;
+	}
+	[#{$helperPrefix}~="#{$colName}-last"] {
+		order: 1 + $colTot;
+	}
+}
+
+
+
+// ====================================================================
+// =order helpers
+// ====================================================================
+
+@mixin gy-order-helper($gyMap) {
+	// get vars
+	$prefix: map-get($gyMap, prefix);
+	$orderName: map-get($gyMap, orderName);
+	$colTot: map-get($gyMap, colTot);
+	$helperPrefix: map-get($gyMap, helperPrefix);
+
+	@for $i from 1 through ($colTot) {
+		[#{$helperPrefix}~="#{$orderName}-#{$i}"] { order: $i; }
+	}
+}
+
+@mixin gy-order-helpers($gyMap) {
+	// get vars
+	$breakpoint: map-get($gyMap, bp);
+	$prefix: map-get($gyMap, prefix);
+	$orderName: map-get($gyMap, orderName);
+	$colTot: map-get($gyMap, colTot);
+
+	// generate offsets
+	@include gy-order-helper($gyMap);
+	@each $bp, $bpValue in $breakpoint {
+		@include gy-mq($bpValue) {
+			$gyInternalMap: gy-map-set($gyMap, orderName, #{$orderName}-#{$bp});
+			@include gy-order-helper($gyInternalMap);
+		}
+	}
+}
+
+
+
+// ====================================================================
+// =offset helpers
+// ====================================================================
+
+@mixin gy-offset-helper($gyMap) {
+	// get vars
+	$prefix: map-get($gyMap, prefix);
+	$offsetName: map-get($gyMap, offsetName);
+	$colTot: map-get($gyMap, colTot);
+	$helperPrefix: map-get($gyMap, helperPrefix);
+
+	@for $i from 0 through ($colTot)-1 {
+		[#{$prefix}][#{$helperPrefix}~="#{$offsetName}-#{$i}"] { margin-left: (100%/$colTot)*$i; }
+	}
+}
+
+@mixin gy-offset-helpers($gyMap) {
+	// get vars
+	$breakpoint: map-get($gyMap, bp);
+	$prefix: map-get($gyMap, prefix);
+	$offsetName: map-get($gyMap, offsetName);
+	$colTot: map-get($gyMap, colTot);
+
+	// generate offsets
+	@include gy-offset-helper($gyMap);
+	@each $bp, $bpValue in $breakpoint {
+		@include gy-mq($bpValue) {
+			$gyInternalMap: gy-map-set($gyMap, offsetName, #{$offsetName}-#{$bp});
+			@include gy-offset-helper($gyInternalMap);
+		}
+	}
+}
+
+
+
+// ====================================================================
+// =grid
+// ====================================================================
+
+@mixin gy-make-grid($gyMap) {
+	// get vars
+	$prefix: map-get($gyMap, prefix);
+	$gridName: map-get($gyMap, gridName);
+	$colName: map-get($gyMap, colName);
+	$colTot: map-get($gyMap, colTot);
+
+	@for $i from 1 through $colTot {
+		[#{$prefix}~="#{$gridName}-#{$i}"] > [#{$prefix}*='#{$colName}'] {
+			flex-basis: (100%/$i);
+			max-width: (100%/$i);
+		}
+	}
+}
+
+@mixin gy-make-grids($gyMap) {
+	// get vars
+	$breakpoint: map-get($gyMap, bp);
+	$prefix: map-get($gyMap, prefix);
+	$gridName: map-get($gyMap, gridName);
+	$colName: map-get($gyMap, colName);
+	$colTot: map-get($gyMap, colTot);
+
+	// generate grids
+	@include gy-make-grid($gyMap);
+	@each $bp, $bpValue in $breakpoint {
+		@include gy-mq($bpValue) {
+			$gyInternalMap: gy-map-set($gyMap, gridName, #{$gridName}#{$bp});
+			@include gy-make-grid($gyInternalMap);
+		}
+	}
+}
+
+
+
+// ====================================================================
+// =columns
+// ====================================================================
+
+@mixin gy-make-col($gyMap) {
+	// get vars
+	$prefix: map-get($gyMap, prefix);
+	$gridName: map-get($gyMap, gridName);
+	$colName: map-get($gyMap, colName);
+	$colTot: map-get($gyMap, colTot);
+
+	[#{$prefix}*="#{$gridName}"] {
+		@for $i from 1 through $colTot {
+			> [#{$prefix}~='#{$colName}-#{$i}'] {
+				flex-basis: (100%/$colTot)*$i;
+				max-width: (100%/$colTot)*$i;
+			}
+		}
+	}
+}
+
+@mixin gy-make-cols($gyMap) {
+	// get vars
+	$breakpoint: map-get($gyMap, bp);
+	$prefix: map-get($gyMap, prefix);
+	$gridName: map-get($gyMap, gridName);
+	$colName: map-get($gyMap, colName);
+	$colTot: map-get($gyMap, colTot);
+
+	// generate columns
+	@include gy-make-col($gyMap);
+	@each $bp, $bpValue in $breakpoint {
+		@include gy-mq($bpValue) {
+			$gyInternalMap: gy-map-set($gyMap, colName, #{$colName}#{$bp});
+			@include gy-make-col($gyInternalMap);
+		}
+	}
+}
+
+
+
+// ====================================================================
+// =generate all
+// ====================================================================
+
+@mixin gy-generator($gyMap) {
+	// base
+	@include gy-base($gyMap);
+
+	// helpers
+	@include gy-grid-helpers($gyMap);
+	@include gy-col-helpers($gyMap);
+	@include gy-order-helpers($gyMap);
+	@include gy-offset-helpers($gyMap);
+
+	// grid
+	@include gy-make-grids($gyMap);
+	@include gy-make-cols($gyMap);
+}

@@ -1,0 +1,58 @@
+// ====================================================================
+// =clearfix
+// ====================================================================
+
+%cf {
+	@include cf();
+}
+
+
+
+// ====================================================================
+// =icons
+// ====================================================================
+
+%icons {
+	font-family: $font-custom-name;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+
+//====================================================================
+// =wrap
+// ====================================================================
+
+%wrap {
+	max-width: $device-width-max;
+	margin: 0 auto;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+@include mq($m) {
+	%wrap {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+
+
+
+// ====================================================================
+// =media
+// ====================================================================
+
+%img-resp {
+	display: block;
+	width: 100%;
+	height: auto;
+}

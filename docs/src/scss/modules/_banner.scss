@@ -1,0 +1,16 @@
+.banner {
+	position: relative;
+	text-align: center;
+	margin: 0;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	.typ {
+		max-width: 400px;
+		margin: 0 auto;
+		text-align: center;
+		img {
+			display: block;
+			margin: 0 auto 15px;
+		}
+	}
+}

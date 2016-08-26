@@ -1,0 +1,25 @@
+// ====================================================================
+// =manage flow
+// ====================================================================
+
+// you can use this mixin to manage the margin
+// between each element and it is usually applied
+// to columns elements
+//
+// example:
+// .gal {
+//     @include flow(40px, 20px);
+// }
+
+@mixin flow($marg-m: ($marg / 2), $marg-d: $marg, $mq: $m, $type: div) {
+	margin-top: (-$marg-m);
+	> #{$type} {
+		margin-top: $marg-m;
+	}
+	@include mq($mq) {
+		margin-top: (-$marg-d);
+		> #{$type} {
+			margin-top: $marg-d;
+		}
+	}
+}

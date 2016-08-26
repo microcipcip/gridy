@@ -1,0 +1,20 @@
+[source] {
+	overflow: hidden;
+	height: 0;
+	margin: 0;
+	font-size: 0;
+	opacity: 0;
+	transition: opacity .2s ease-in-out;
+	&.-expand {
+		height: auto;
+		margin: 0 0 $marg-l;
+		opacity: 1;
+	}
+}
+	code {
+		padding: 0 5px 2px;
+		border: 1px solid #DDD;
+		background: #f7f7f7;
+		color: #666;
+		font-size: 18px;
+	}

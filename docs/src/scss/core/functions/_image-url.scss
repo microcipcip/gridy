@@ -1,0 +1,12 @@
+// ====================================================================
+// =get image url
+// ====================================================================
+
+// example:
+// body {
+//     background-image: image-url('general/logo.png');
+// }
+
+@function image-url($url) {
+	@return url("#{$image-url-path}#{$url}");
+}

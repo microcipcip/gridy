@@ -1,0 +1,196 @@
+// ====================================================================
+// =debug mode
+// ====================================================================
+
+$debug-mode: true;
+
+
+
+// ====================================================================
+// =themes
+// ====================================================================
+
+$white: #ffffff;
+$black: #000000;
+$blue: #477dca;
+
+$red: #df3331;
+
+$grey-dark: #333;
+$grey-medium: #999;
+$grey-light: #ddd;
+
+
+
+// ====================================================================
+// =paths, fonts
+// ====================================================================
+
+// image folder path
+$image-url-path: "../img/";
+
+// custom font path
+$font-path: "../fonts";
+$font-custom-name: "gridy"; // icons from: http://app.fontastic.me/ but from now on use http://icomoon.io/
+$font-custom-query: "00003"; // change this value when you update the font, force the browser to refresh
+
+// font vars
+$icon-github-alt: "\e900";
+$icon-github: "\e901";
+$icon-embed: "\ea7f";
+$icon-embed2: "\ea80";
+$icon-codepen: "\eae8";
+
+
+// typography
+$base-font-family: 'IM Fell English', serif;
+$heading-font-family: $base-font-family;
+
+// font colors
+$base-font-color: $grey-dark;
+$action-color: $blue;
+
+// font sizes
+$base-font-size: 1.2em;
+
+$h1-font-size: $base-font-size * 1.9;
+$h2-font-size: $base-font-size * 1.6;
+$h3-font-size: $base-font-size * 1.4;
+$h4-font-size: $base-font-size * 1.2;
+$h5-font-size: $base-font-size * 1.1;
+$h6-font-size: $base-font-size;
+
+// line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// other sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+
+
+// ====================================================================
+// =border, bg, forms, animations
+// ====================================================================
+
+// border
+$base-border-color: $grey-light;
+$base-border: 1px solid $base-border-color;
+
+// background colors
+$base-background-color: $white;
+$secondary-background-color: tint($base-border-color, 75%);
+
+// forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// animations
+$base-duration: 150ms;
+$base-timing: ease;
+
+
+
+// ====================================================================
+// =responsive
+// ====================================================================
+
+// device
+$device-width-max: 1200px;
+$device-width-min: 320px;
+
+// media queries and breakpoints
+$xxxs: 0;
+$xxs: 200px;
+$xs: 320px;
+$s: 400px;
+$sl: 480px;
+$sl2: 580px;
+$m: 768px;
+$ml: 992px;
+$l: 1100px;
+$xl: 1200px;
+$xxl: 1300px;
+$xxxl: 1400px;
+$xxxxl: 1500px;
+$xxxxxl: 1600px;
+$xxxxxxl: 1700px;
+
+$breakpoints: (
+		(xxxs, $xxxs),
+		(xxs, $xxs),
+		(xs, $xs),
+		(s, $s),
+		(sl, $sl),
+		(sl2, $sl2),
+		(m, $m),
+		(ml, $ml),
+		(l, $l),
+		(xl, $xl),
+		(xxl, $xxl),
+		(xxxl, $xxxl),
+		(xxxxl, $xxxxl),
+		(xxxxxl, $xxxxxl),
+		(xxxxxxl, $xxxxxxl)
+);
+$bpLength: length($breakpoints);
+
+// disable bourbon autoprefixer
+$prefix-for-webkit: false;
+$prefix-for-mozilla: false;
+$prefix-for-microsoft: false;
+$prefix-for-opera: false;
+$prefix-for-spec: true;
+
+
+
+// ====================================================================
+// =project specific vars
+// ====================================================================
+
+// z-index
+$z-layers: (
+		'modal' 200,
+		'header' 20,
+		'default' 1,
+		'bottomless'     -10000
+);
+
+// grid margin and padding
+$pad-grid: 20px;
+$marg-grid: 20px;
+
+// margin
+$marg: 20px;
+$marg-xxxs: $marg / 8;
+$marg-xxs: $marg / 6;
+$marg-xs: $marg / 4;
+$marg-s: $marg / 2;
+$marg-sl: $marg - ($marg / 3);
+$marg-m: $marg + ($marg / 2);
+$marg-l: $marg * 2;
+$marg-xl: $marg * 3;
+$marg-xxl: $marg * 4;
+$marg-xxxl: $marg * 5;
+$marg-xxxxl: $marg * 6;
+
+// padding
+$pad: 20px;
+$pad-xxxs: $pad / 8;
+$pad-xxs: $pad / 6;
+$pad-xs: $pad / 4;
+$pad-s: $pad / 2;
+$pad-sl: $pad - ($pad / 3);
+$pad-m: $pad + ($pad / 2);
+$pad-l: $pad * 2;
+$pad-xl: $pad * 3;
+$pad-xxl: $pad * 4;
+$pad-xxxl: $pad * 5;
+$pad-xxxxl: $pad * 6;
+
+// header
+$header-ml-w: 300px;
+$header-l-w: 400px;

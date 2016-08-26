@@ -1,0 +1,24 @@
+.doc {
+
+}
+	.doc__typ {}
+	.doc__grid {}
+		.doc__box {
+			width: 100%;
+			padding: 5px;
+			background: lighten($grey-light, 10%);
+			background: repeating-linear-gradient(-30deg, white 0px, transparentize(black, 0.98) 5px);
+			border-style: solid;
+			border-width: 1px;
+			border-image: image-url('general/borders.png') 2 repeat;
+			text-align: center;
+			&:before,
+			&:after {
+				content: '\00a0';
+			}
+		}
+	.doc__actions {
+		max-width: 100%;
+		text-align: right;
+	}
+	.doc__source {}

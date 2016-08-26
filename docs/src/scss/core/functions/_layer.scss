@@ -1,0 +1,16 @@
+// ====================================================================
+// =set z-index
+// ====================================================================
+
+// this mixin is useful if you want to manage
+// z-index values and can help you avoid
+// having to declare hacky values like z-index: 9999;
+//
+// example:
+// .header {
+//     z-index: z('header');
+// }
+
+@function z($layer) {
+	@return map-get($z-layers, $layer);
+}
