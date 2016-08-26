@@ -97,7 +97,7 @@
 	$helperPrefix: map-get($gyMap, helperPrefix);
 
 	// no spacing between cols : noGutter
-	&[#{$helperPrefix}~="#{$gridName}-no-gutter"] {
+	[#{$helperPrefix}~="#{$gridName}-no-gutter"] {
 		margin: 0;
 		> [#{$prefix}*="#{$colName}"] {
 			padding: 0;
