@@ -193,9 +193,10 @@ $gyVars: (
 		offsetName      : off,
 		gutter          : $grid-gutter, // total
 		colBottom       : $grid-gutter, // usually same as gutter
+		bpDivider       : '', // usually empty, see customization docs for more info
 		bp              : (
-			// careful: do not use the letter 'g' or 'c' here, it would break the grid
-			// because it's the gridName and colName
+				// careful: do not use the letter 'g' or 'c' here, it would break the grid
+				// because it's the gridName and colName
 				s       : 400px,
 				m       : 768px,
 				l       : 1100px

@@ -283,6 +283,7 @@
 
 @mixin gy-make-grids($gyMap) {
 	// get vars
+	$bpDivider: map-get($gyMap, bpDivider);
 	$breakpoint: map-get($gyMap, bp);
 	$prefix: map-get($gyMap, prefix);
 	$gridName: map-get($gyMap, gridName);
@@ -293,7 +294,7 @@
 	@include gy-make-grid($gyMap);
 	@each $bp, $bpValue in $breakpoint {
 		@include gy-mq($bpValue) {
-			$gyInternalMap: gy-map-set($gyMap, gridName, #{$gridName}#{$bp});
+			$gyInternalMap: gy-map-set($gyMap, gridName, #{$gridName}#{$bpDivider}#{$bp});
 			@include gy-make-grid($gyInternalMap);
 		}
 	}
@@ -324,6 +325,7 @@
 
 @mixin gy-make-cols($gyMap) {
 	// get vars
+	$bpDivider: map-get($gyMap, bpDivider);
 	$breakpoint: map-get($gyMap, bp);
 	$prefix: map-get($gyMap, prefix);
 	$gridName: map-get($gyMap, gridName);
@@ -334,7 +336,7 @@
 	@include gy-make-col($gyMap);
 	@each $bp, $bpValue in $breakpoint {
 		@include gy-mq($bpValue) {
-			$gyInternalMap: gy-map-set($gyMap, colName, #{$colName}#{$bp});
+			$gyInternalMap: gy-map-set($gyMap, colName, #{$colName}#{$bpDivider}#{$bp});
 			@include gy-make-col($gyInternalMap);
 		}
 	}

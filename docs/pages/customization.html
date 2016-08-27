@@ -180,7 +180,8 @@
 	--></pre>
 
 		<p>
-			What if you prefer <strong>using classes instead of data attributes</strong>? No problem, you can use them! Let's see an example:
+			What if you prefer <strong>using classes instead of data attributes</strong>?
+			No problem, you can use them too! Let's see an example:
 		</p>
 		<pre class="doc-custom__source"><!--
 			--><code>
@@ -188,14 +189,38 @@
 						prefix          : class,
 						helperPrefix    : class,
 
-						// Note: rename g to grid or any other unique name
+						// Note: rename g to gridy or any other unique name
 						// to avoid collision with other classes
-						gridName        : grid,
+						gridName        : gridy,
 
-						// Note: rename c to col or any unique name
+						// Note: rename c to coly or any unique name
 						// to avoid collision with other classes
-						colName         : col
+						colName         : coly,
+
+						// this is needed otherwise the breakpoint
+						// would be attached to the class name unreadable
+						bpDivider       : '-'
 				);
+			</code><!--
+	--></pre>
+
+		<p>
+			Now you can declare a grid like this:
+		</p>
+		<pre class="doc-custom__source"><!--
+			--><code>
+				<div class="wrap">
+					<div class="gridy-12 gridy-s-6 gridy-m-4">
+						<div class="coly"><div class="doc__box"></div></div>
+						<div class="coly"><div class="doc__box"></div></div>
+						<div class="coly"><div class="doc__box"></div></div>
+						<div class="coly"><div class="doc__box"></div></div>
+						<div class="coly"><div class="doc__box"></div></div>
+						<div class="coly"><div class="doc__box"></div></div>
+						<div class="coly"><div class="doc__box"></div></div>
+						<div class="coly"><div class="doc__box"></div></div>
+					</div>
+				</div>
 			</code><!--
 	--></pre>
 	</div>
