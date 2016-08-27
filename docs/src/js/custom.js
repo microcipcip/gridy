@@ -74,6 +74,16 @@
 
 							// code highlighter
 							this.highlight(this.$root.$els.wrap);
+
+							// enable codepen
+							var $docDemo = this.$root.$els.wrap.querySelectorAll('.doc-demo');
+							if ($docDemo.length) {
+								this.$root.injectScript({
+									$appendTo: 'body',
+									url: '//assets.codepen.io/assets/embed/ei.js'
+								});
+							}
+
 						}.bind(this));
 
 						transition.next();
@@ -131,6 +141,18 @@
 					.replace(/>/g, '&gt;')
 					.replace(/"/g, '&quot;')
 					.replace(/'/g, '&#039;');
+			},
+			injectScript: function(opts) {
+				if (!opts.$appendTo || !opts.url) return;
+
+				var $script = document.createElement('script');
+				$script.type = 'text/javascript';
+				$script.async = true;
+				$script.onload = function() {
+					$script.parentNode.removeChild($script);
+				};
+				$script.src = opts.url;
+				document.querySelector(opts.$appendTo).appendChild($script);
 			},
 			toggleNav: function(e) {
 				this.$els.header.classList.toggle('-expanded');

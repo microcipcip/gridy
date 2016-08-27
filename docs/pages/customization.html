@@ -20,7 +20,7 @@
 			First, create the <code>package.json</code> file in the root of your project:
 		</p>
 		<pre class="doc-custom__source"><!--
-			--><code>
+		--><code>
 				{
 					"name": "YourProjectName",
 					"version": "1.0.0",
@@ -42,7 +42,7 @@
 
 		<p>Now create this <code>gulp.js</code>file:</p>
 		<pre class="doc-custom__source"><!--
-			--><code>
+		--><code>
 				'use strict';
 
 				// include plugins
@@ -81,7 +81,7 @@
 
 		<p>Now include the <a href="https://github.com/microcipcip/gridy/tree/master/src" target="_blank">Gridy source</a> to your SASS file.</p>
 		<pre class="doc-custom__source"><!--
-			--><code>
+		--><code>
 				@import "vendor/gridy";
 			</code><!--
 	--></pre>
@@ -102,7 +102,7 @@
 <div class="doc-custom">
 	<div class="doc-custom__typ typ -center">
 		<pre class="doc-custom__source"><!--
-			--><code>
+		--><code>
 				$gyVars: (
 						prefix          : gy,
 						helperPrefix    : gy-h,
@@ -132,49 +132,11 @@
 			for example <code>data-gy=""</code> and <code>data-gy-help=""</code>:
 		</p>
 		<pre class="doc-custom__source"><!--
-			--><code>
+		--><code>
 				$gyVars: (
 						prefix          : data-gy,
 						helperPrefix    : data-gy-help,
 						...
-				);
-			</code><!--
-	--></pre>
-
-		<p>Maybe you want a <strong>6 columns</strong> grid with <strong>30 pixels gutter</strong>?</p>
-		<pre class="doc-custom__source"><!--
-			--><code>
-				$gutter: 30px;
-				$gyVars: (
-						...
-						colTot          : 6,
-						gutter          : $gutter, // total
-						colBottom       : $gutter, // usually same as gutter
-						...
-				);
-			</code><!--
-	--></pre>
-
-		<p>
-			What about those media queries...why not <strong>add more breakpoints</strong>?
-		</p>
-		<pre class="doc-custom__source"><!--
-			--><code>
-				// Note: be careful not to add too many breakpoints
-				// or the generated CSS file will become huge.
-
-				// Also, remember not to use as breakpoints names
-				// the reserved words letters "g" or "c".
-				$gyVars: (
-						...
-						bp              : (
-								s       : 400px, // small
-								sl      : 580px, // small larger
-								m       : 768px, // medium
-								ml      : 992px, // medium larger
-								l       : 1100px // large
-								xl      : 1200px // extra large
-						)
 				);
 			</code><!--
 	--></pre>
@@ -184,7 +146,7 @@
 			No problem, you can use them too! Let's see an example:
 		</p>
 		<pre class="doc-custom__source"><!--
-			--><code>
+		--><code>
 				$gyVars: (
 						prefix          : class,
 						helperPrefix    : class,
@@ -203,24 +165,59 @@
 				);
 			</code><!--
 	--></pre>
-
-		<p>
-			Now you can declare a grid like this:
-		</p>
 		<pre class="doc-custom__source"><!--
-			--><code>
+		--><code>
+				<!-- Now you can build a grid like this -->
 				<div class="wrap">
 					<div class="gridy-12 gridy-s-6 gridy-m-4">
-						<div class="coly"><div class="doc__box"></div></div>
-						<div class="coly"><div class="doc__box"></div></div>
-						<div class="coly"><div class="doc__box"></div></div>
-						<div class="coly"><div class="doc__box"></div></div>
-						<div class="coly"><div class="doc__box"></div></div>
-						<div class="coly"><div class="doc__box"></div></div>
-						<div class="coly"><div class="doc__box"></div></div>
-						<div class="coly"><div class="doc__box"></div></div>
+						<div class="coly">...</div>
+						<div class="coly">...</div>
+						<div class="coly">...</div>
+						<div class="coly">...</div>
+						<div class="coly">...</div>
+						<div class="coly">...</div>
+						<div class="coly">...</div>
+						<div class="coly">...</div>
 					</div>
 				</div>
+			</code><!--
+	--></pre>
+
+		<p>Maybe you want a <strong>6 columns</strong> grid with <strong>30 pixels gutter</strong>?</p>
+		<pre class="doc-custom__source"><!--
+		--><code>
+				$gutter: 30px;
+				$gyVars: (
+						...
+						colTot          : 6,
+						gutter          : $gutter, // total
+						colBottom       : $gutter, // usually same as gutter
+						...
+				);
+			</code><!--
+	--></pre>
+
+		<p>
+			What about those media queries...why not <strong>add more breakpoints</strong>?
+		</p>
+		<pre class="doc-custom__source"><!--
+		--><code>
+				// Note: be careful not to add too many breakpoints
+				// or the generated CSS file will become huge.
+
+				// Also, remember not to use as breakpoints names
+				// the reserved words letters "g" or "c".
+				$gyVars: (
+						...
+						bp              : (
+								s       : 400px, // small
+								sl      : 580px, // small larger
+								m       : 768px, // medium
+								ml      : 992px, // medium larger
+								l       : 1100px // large
+								xl      : 1200px // extra large
+						)
+				);
 			</code><!--
 	--></pre>
 	</div>
