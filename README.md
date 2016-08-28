@@ -45,7 +45,7 @@ Here's a list of Gridy features:
 You can install Gridy either by including the [CSS file](https://github.com/microcipcip/gridy/tree/master/dist), 
 or directly by adding the [SASS files](https://github.com/microcipcip/gridy/tree/master/src) in your project.
 
-Head to the [Customization section](https://microcipcip.github.io/gridy/#!/customization) to learn more about the advanced configuration with SASS.
+Head to the [Customization section](https://microcipcip.github.io/gridy/#!/customization) to learn how to customize the grid with SASS.
 
 ## Usage
 
