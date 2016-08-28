@@ -1,5 +1,8 @@
 .doc {
-
+	margin: 0 0 $pad-xl;
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 	.doc__typ {}
 	.doc__grid {}

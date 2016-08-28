@@ -314,8 +314,8 @@
 	$colTot: map-get($gyMap, colTot);
 
 	// auto
-	[#{$prefix}~="#{$gridName}"] {
-		> [#{$prefix}*='#{$colName}-auto'] {
+	[#{$prefix}*="#{$gridName}"] {
+		> [#{$prefix}~='#{$colName}-auto'] {
 			flex: 1 1 0%;
 			max-width: 100%;
 		}

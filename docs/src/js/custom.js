@@ -133,7 +133,7 @@
 			},
 			escapeDocsCustom: function(unsafe) {
 				return unsafe
-					.replace(/^\t\t\t\t/gm, '') // remove first two tabs for each line
+					.replace(/^\t\t\t\t/gm, '') // remove first four tabs for each line
 					.replace(/\t/gm, '  ') // replace all other tabs with two spaces
 					.replace(/^\s+|\s+$/g, '')
 					.replace(/&/g, '&amp;')

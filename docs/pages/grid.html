@@ -2,13 +2,11 @@
 	<h1>Grid</h1>
 	<p>
 		Gridy is easy to use. Just add a <code>gy="g"</code> data attribute to make the grid and a
-		<code>gy="c"</code> data attribute to make the columns.
-	</p>
-	<p>
-		Let's see some examples.
+		<code>gy="c"</code> data attribute to make the columns. Let's see some examples.
 	</p>
 </div>
 
+<div class="spacer"><div class="spacer__mask"></div></div>
 
 <div class="doc">
 	<div class="doc__typ typ">
@@ -159,7 +157,7 @@
 	<div class="doc__typ typ">
 		<h3>Responsive method, mix grid and columns level</h3>
 		<p>
-			You can also mix the two! For example you could set the sizing <strong>at both the grid and the column level</strong>,
+			Why not mix the two modes? For example you could set the sizing <strong>at both the grid and the column level</strong>,
 			and the grid level settings will be the fallback if a sizing is not set at the column level.
 		</p>
 	</div>
@@ -182,6 +180,28 @@
 		<a class="btn-ico -codepen" href="http://codepen.io/microcipcip/pen/XKwwZZ?editors=1000" target="_blank">Codepen</a>
 	</div>
 	<pre class="doc__source" source="responsive-mix"><code></code></pre>
+</div>
+
+
+<div class="doc">
+	<div class="doc__typ typ">
+		<h3>Responsive method, from fixed width to auto width</h3>
+		<p>
+			Sometimes you may want to revert a fixed width column to its auto state.
+			You can set it with <code>gy="c-12 cm-4 cl-auto"</code>
+		</p>
+	</div>
+	<div class="doc__grid">
+		<div gy="g">
+			<div gy="c-12 cm-4"><div class="doc__box"></div></div>
+			<div gy="c-12 cm-auto"><div class="doc__box"></div></div>
+		</div>
+	</div>
+	<div class="doc__actions typ">
+		<a class="btn-ico -source" source-target="responsive-width-auto" href="#">Source</a>
+		<a class="btn-ico -codepen" href="http://codepen.io/microcipcip/pen/bZXLLP?editors=1000" target="_blank">Codepen</a>
+	</div>
+	<pre class="doc__source" source="responsive-width-auto"><code></code></pre>
 </div>
 
 
