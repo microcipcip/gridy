@@ -56,4 +56,6 @@
 		margin-bottom: 0;
 	}
 }
-	.doc-demo__source {}
+	.doc-demo__grid {
+		background: lighten($grey-light, 12%);
+	}
