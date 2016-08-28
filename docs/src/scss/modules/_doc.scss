@@ -31,9 +31,26 @@
 
 .doc-custom {
 	margin: 0 0 $pad-xl;
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 	.doc-custom__source {
 		> pre {
 			font-size: 0;
 		}
 	}
+
+
+
+// ====================================================================
+// =custom demo
+// ====================================================================
+
+.doc-demo {
+	margin: 0 0 $pad-xl;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+	.doc-demo__source {}

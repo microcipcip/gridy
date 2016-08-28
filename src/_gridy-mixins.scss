@@ -313,6 +313,13 @@
 	$colName: map-get($gyMap, colName);
 	$colTot: map-get($gyMap, colTot);
 
+	// auto
+	[#{$prefix}~="#{$gridName}"] {
+		> [#{$prefix}*='#{$colName}-auto'] {
+			flex-basis: auto;
+			max-width: 100%;
+		}
+	}
 	[#{$prefix}*="#{$gridName}"] {
 		@for $i from 1 through $colTot {
 			> [#{$prefix}~='#{$colName}-#{$i}'] {
