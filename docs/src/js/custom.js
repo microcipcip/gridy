@@ -83,7 +83,6 @@
 									url: '//assets.codepen.io/assets/embed/ei.js'
 								});
 							}
-
 						}.bind(this));
 
 						transition.next();
