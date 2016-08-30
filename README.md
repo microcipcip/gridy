@@ -7,6 +7,8 @@
 <h1 align="center">Gridy</h1>
 ## A kickass flex grid, powered by SASS
 
+[![Join the chat at https://gitter.im/flex-gridy/Lobby](https://badges.gitter.im/flex-gridy/Lobby.svg)](https://gitter.im/flex-gridy/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 v. *0.9.0*
 
 **Simple definition**: Adj. gridier, gridiest; Having or showing a desire to build flexbox grids
