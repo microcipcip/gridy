@@ -5,7 +5,7 @@
 </p>
 
 <h1 align="center">
-	Gridy <br>
+	GRIDY <br>
 	<small>A kickass flex grid, powered by SASS</small>
 	<br>
 	<br>
