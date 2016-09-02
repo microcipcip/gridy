@@ -3,9 +3,9 @@
 // ====================================================================
 
 @mixin dashed-border($dashlength, $spacelength, $borderwidth, $color, $position: top) {
-	$per: percentage($dashlength / ($dashlength + $spacelength));
-	background-image: #{linear-gradient}(to right, $color 0%, $color $per, rgba(0, 0, 0, 0) $per);
-	background-position: 0 $position;
-	background-size: ($dashlength + $spacelength) $borderwidth;
-	background-repeat: repeat-x;
+  $per: percentage($dashlength / ($dashlength + $spacelength));
+  background-image: #{linear-gradient}(to right, $color 0%, $color $per, rgba(0, 0, 0, 0) $per);
+  background-position: 0 $position;
+  background-size: ($dashlength + $spacelength) $borderwidth;
+  background-repeat: repeat-x;
 }

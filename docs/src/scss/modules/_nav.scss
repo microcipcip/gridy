@@ -1,74 +1,80 @@
 .nav-main__toggler {
-	cursor: pointer;
-	position: absolute;
-	top: 30px;
-	right: $pad;
-	width: 34px;
-	height: 30px;
-	@include mq($ml) {
-		display: none;
-	}
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  right: $pad;
+  width: 34px;
+  height: 30px;
+  @include mq($ml) {
+    display: none;
+  }
 }
+
 .nav-main__toggler-el {
-	position: relative;
-	&:after {
-		content: '';
-		display: block;
-		margin: 8px 0 0;
-		border-style: solid;
-		border-width: 1px;
-		border-image: image-url('general/borders.png') 2 repeat;
-		transform-origin: 11% 40%;
-	}
-	&.-el1 {
-		.header.-expanded & {
-			&:after {
-				transform: rotate(45deg);
-			}
-		}
-	}
-	&.-el2 {
-		.header.-expanded & {
-			&:after {
-				transform: translateX(100%);
-				opacity: 0;
-			}
-		}
-	}
-	&.-el3 {
-		.header.-expanded & {
-			&:after {
-				transform: rotate(-45deg);
-			}
-		}
-	}
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    margin: 8px 0 0;
+    border-style: solid;
+    border-width: 1px;
+    border-image: image-url('general/borders.png') 2 repeat;
+    transform-origin: 11% 40%;
+  }
+  &.-el1 {
+    .header.-expanded & {
+      &:after {
+        transform: rotate(45deg);
+      }
+    }
+  }
+  &.-el2 {
+    .header.-expanded & {
+      &:after {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+    }
+  }
+  &.-el3 {
+    .header.-expanded & {
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
 }
 
 .navs {
-	display: none;
-	padding: $pad-m 0 $pad;
-	text-align: center;
-	.header.-expanded & {
-		display: block;
-	}
-	@include mq($ml) {
-		display: block;
-		padding: 0;
-	}
+  display: none;
+  padding: $pad-m 0 $pad;
+  text-align: center;
+  .header.-expanded & {
+    display: block;
+  }
+  @include mq($ml) {
+    display: block;
+    padding: 0;
+  }
 }
-.nav {}
-	.nav__item {}
-		.nav__link {
-			color: $black;
-			font-size: 1.2em;
 
-			// hover and active state
-			.nav__item.-active &,
-			&:active,
-			&:hover {
-				color: $grey-dark;
-			}
-			.nav__item.-active & {
-				font-weight: bold;
-			}
-		}
+.nav {
+}
+
+  .nav__item {
+  }
+
+    .nav__link {
+      color: $black;
+      font-size: 1.2em;
+
+      // hover and active state
+      .nav__item.-active &,
+      &:active,
+      &:hover {
+        color: $grey-dark;
+      }
+      .nav__item.-active & {
+        font-weight: bold;
+      }
+    }

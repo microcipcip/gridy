@@ -18,7 +18,9 @@
 // ====================================================================
 
 // fonts
-@import "base/fonts"; // use this for import fonts
+@import "base/fonts";
+
+// use this for import fonts
 @import "base/normalize";
 
 // typography and basic elements styling
@@ -41,6 +43,7 @@
 @import "modules/banner";
 @import "modules/code";
 @import "modules/doc";
+@import "modules/gitter";
 @import "modules/header";
 @import "modules/highlight";
 @import "modules/logo";

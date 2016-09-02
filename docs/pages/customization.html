@@ -1,230 +1,237 @@
 <div class="typ -center -text-center -text-medium">
-	<h1>Customization</h1>
-	<p>
-		If you use Gridy with SASS, it is very easy to customize the grid to meet your project requirements.
-	</p>
+  <h1>Customization</h1>
+  <p>
+    If you use Gridy with SASS, it is very easy to customize the grid to meet your project requirements.
+  </p>
 </div>
 
-<div class="spacer"><div class="spacer__mask"></div></div>
+<div class="spacer">
+  <div class="spacer__mask"></div>
+</div>
 
 <div class="typ -center -text-center -text-medium">
-	<h2>Getting started</h2>
-	<p>
-		Let's see how we can setup gulp and node-sass for compiling our grid with SASS.
-	</p>
+  <h2>Getting started</h2>
+  <p>
+    Let's see how we can setup gulp and node-sass for compiling our grid with SASS.
+  </p>
 </div>
 
 <div class="doc-custom">
-	<div class="doc-custom__typ typ -center">
-		<p>
-			First, create the <code>package.json</code> file in the root of your project:
-		</p>
-		<pre class="doc-custom__source"><!--
-		--><code>
-				{
-					"name": "YourProjectName",
-					"version": "1.0.0",
-					"description": "Project name description",
-					"author": "AuthorName",
-					"main": "gulpfile.js",
-					"license": "MIT",
-					"devDependencies": {
-						"es6-promise": "^3.2.1",
-						"gulp": "^3.9.0",
-						"gulp-autoprefixer": "^3.1.0",
-						"gulp-clean-css": "^2.0.10",
-						"gulp-plumber": "^1.1.0",
-						"gulp-rename": "^1.2.2",
-						"gulp-sass": "^2.3.2",
-						"gulp-watch": "^4.3.8"
-					}
-				}
-			</code><!--
-	--></pre>
+  <div class="doc-custom__typ typ -center">
+    <p>
+      First, create the <code>package.json</code> file in the root of your project:
+    </p>
+    <pre class="doc-custom__source"><!--
+    --><code>
+        {
+          "name": "YourProjectName",
+          "version": "1.0.0",
+          "description": "Project name description",
+          "author": "AuthorName",
+          "main": "gulpfile.js",
+          "license": "MIT",
+          "devDependencies": {
+            "es6-promise": "^3.2.1",
+            "gulp": "^3.9.0",
+            "gulp-autoprefixer": "^3.1.0",
+            "gulp-clean-css": "^2.0.10",
+            "gulp-plumber": "^1.1.0",
+            "gulp-rename": "^1.2.2",
+            "gulp-sass": "^2.3.2",
+            "gulp-watch": "^4.3.8"
+          }
+        }
+      </code><!--
+  --></pre>
 
-		<p>Now create this <code>gulp.js</code>file:</p>
-		<pre class="doc-custom__source"><!--
-		--><code>
-				'use strict';
+    <p>Now create this <code>gulp.js</code>file:</p>
+    <pre class="doc-custom__source"><!--
+    --><code>
+        'use strict';
 
-				// include plugins
-				var gulp        = require('gulp'),
-				es6Promise      = require('es6-promise'), // required for autoprefixer
-				minifyCSS       = require('gulp-clean-css'),
-				prefix          = require('gulp-autoprefixer'),
-				plumber         = require('gulp-plumber'),
-				rename          = require('gulp-rename'),
-				sass            = require('gulp-sass');
+        // include plugins
+        var gulp        = require('gulp'),
+        es6Promise      = require('es6-promise'), // required for autoprefixer
+        minifyCSS       = require('gulp-clean-css'),
+        prefix          = require('gulp-autoprefixer'),
+        plumber         = require('gulp-plumber'),
+        rename          = require('gulp-rename'),
+        sass            = require('gulp-sass');
 
-				// sass and css
-				gulp.task('css', function () {
-					gulp.src('src/**/*.scss')
-						.pipe(plumber())
-						.pipe(sass({
-							sourceComments: null,
-							precision: 7
-						}))
-						.pipe(prefix({
-							browsers: ['last 2 versions'],
-							cascade: false
-						}))
-						.pipe(gulp.dest('dist'))
-						.pipe(minifyCSS())
-						.pipe(rename('gridy.min.css'))
-						.pipe(gulp.dest('dist'));
-				});
+        // sass and css
+        gulp.task('css', function () {
+          gulp.src('src/**/*.scss')
+            .pipe(plumber())
+            .pipe(sass({
+              sourceComments: null,
+              precision: 7
+            }))
+            .pipe(prefix({
+              browsers: ['last 2 versions'],
+              cascade: false
+            }))
+            .pipe(gulp.dest('dist'))
+            .pipe(minifyCSS())
+            .pipe(rename('gridy.min.css'))
+            .pipe(gulp.dest('dist'));
+        });
 
-				// watch files
-				gulp.task('watch', function () {
-					gulp.watch('src/**/*.scss', ['css']);
-				});
+        // watch files
+        gulp.task('watch', function () {
+          gulp.watch('src/**/*.scss', ['css']);
+        });
 
-				// default task
-				gulp.task('default', ['css', 'watch']);
-			</code><!--
-	--></pre>
+        // default task
+        gulp.task('default', ['css', 'watch']);
+      </code><!--
+  --></pre>
 
-		<p>Now include the <a href="https://github.com/microcipcip/gridy/tree/master/src" target="_blank">Gridy source</a> to your SASS file.</p>
-		<pre class="doc-custom__source"><!--
-		--><code>
-				@import "vendor/gridy";
-			</code><!--
-	--></pre>
-	</div>
+    <p>Now include the <a href="https://github.com/microcipcip/gridy/tree/master/src" target="_blank">Gridy source</a>
+      to your SASS file.</p>
+    <pre class="doc-custom__source"><!--
+    --><code>
+        @import "vendor/gridy";
+      </code><!--
+  --></pre>
+  </div>
 </div>
 
 
-<div class="spacer"><div class="spacer__mask"></div></div>
+<div class="spacer">
+  <div class="spacer__mask"></div>
+</div>
 
 <div class="typ -center -text-center -text-medium">
-	<h2>Customizing the grid</h2>
-	<p>
-		You can customize your grid by editing the <code>$gyVars</code> variable that you find in the
-		<a href="https://github.com/microcipcip/gridy/blob/master/src/gridy.scss" target="_blank">gridy.scss file</a>:
-	</p>
+  <h2>Customizing the grid</h2>
+  <p>
+    You can customize your grid by editing the <code>$gyVars</code> variable that you find in the
+    <a href="https://github.com/microcipcip/gridy/blob/master/src/gridy.scss" target="_blank">gridy.scss file</a>:
+  </p>
 </div>
 
 <div class="doc-custom">
-	<div class="doc-custom__typ typ -center">
-		<pre class="doc-custom__source"><!--
-		--><code>
-				$gyVars: (
-						prefix          : gy,
-						helperPrefix    : gy-h,
-						wrapWidth       : 1400px,
-						wrapName        : wrap,
-						gridName        : g,
-						colName         : c,
-						colTot          : 12,
-						orderName       : order,
-						offsetName      : off,
-						gutter          : 16px, // total
-						colBottom       : 16px, // usually same as gutter
-						bp              : (
-								// careful: do not use the letter 'g' or 'c' here, it would break the grid
-								// because it's the gridName and colName
-								s       : 400px,
-								m       : 768px,
-								l       : 1100px
-						)
-				);
-			</code><!--
-	--></pre>
+  <div class="doc-custom__typ typ -center">
+    <pre class="doc-custom__source"><!--
+    --><code>
+        $gyVars: (
+            prefix          : gy,
+            helperPrefix    : gy-h,
+            wrapWidth       : 1400px,
+            wrapName        : wrap,
+            gridName        : g,
+            colName         : c,
+            colTot          : 12,
+            orderName       : order,
+            offsetName      : off,
+            gutter          : 16px, // total
+            colBottom       : 16px, // usually same as gutter
+            bp              : (
+                // careful: do not use the letter 'g' or 'c' here, it would break the grid
+                // because it's the gridName and colName
+                s       : 400px,
+                m       : 768px,
+                l       : 1100px
+            )
+        );
+      </code><!--
+  --></pre>
 
-		<p>
-			For example, let's suppose that <strong>you don't like the prefixes</strong> <code>gy=""</code> and <code>gy-h=""</code>,
-			maybe because you need to target your grid with javascript and therefore want to use proper <code>data-attributes</code>,
-			for example <code>data-gy=""</code> and <code>data-gy-help=""</code>:
-		</p>
-		<pre class="doc-custom__source"><!--
-		--><code>
-				$gyVars: (
-						prefix          : data-gy,
-						helperPrefix    : data-gy-help,
-						...
-				);
-			</code><!--
-	--></pre>
+    <p>
+      For example, let's suppose that <strong>you don't like the prefixes</strong> <code>gy=""</code> and
+      <code>gy-h=""</code>,
+      maybe because you need to target your grid with javascript and therefore want to use proper
+      <code>data-attributes</code>,
+      for example <code>data-gy=""</code> and <code>data-gy-help=""</code>:
+    </p>
+    <pre class="doc-custom__source"><!--
+    --><code>
+        $gyVars: (
+            prefix          : data-gy,
+            helperPrefix    : data-gy-help,
+            ...
+        );
+      </code><!--
+  --></pre>
 
-		<p>
-			What if you prefer <strong>using classes instead of data attributes</strong>?
-			No problem, you can use them too! Let's see an example:
-		</p>
-		<pre class="doc-custom__source"><!--
-		--><code>
-				$gyVars: (
-						prefix          : class,
-						helperPrefix    : class,
+    <p>
+      What if you prefer <strong>using classes instead of data attributes</strong>?
+      No problem, you can use them too! Let's see an example:
+    </p>
+    <pre class="doc-custom__source"><!--
+    --><code>
+        $gyVars: (
+            prefix          : class,
+            helperPrefix    : class,
 
-						// Note: rename g to gridy or any other unique name
-						// to avoid collision with other classes
-						gridName        : gridy,
+            // Note: rename g to gridy or any other unique name
+            // to avoid collision with other classes
+            gridName        : gridy,
 
-						// Note: rename c to coly or any unique name
-						// to avoid collision with other classes
-						colName         : coly,
+            // Note: rename c to coly or any unique name
+            // to avoid collision with other classes
+            colName         : coly,
 
-						// this is needed otherwise the breakpoint
-						// would be attached to the class name therefore
-						// the class would be difficult to read
-						bpDivider       : '-'
-				);
-			</code><!--
-	--></pre>
-		<pre class="doc-custom__source"><!--
-		--><code>
-				<!-- Now you can build a grid like this -->
-				<div class="wrap">
-					<div class="gridy-12 gridy-s-6 gridy-m-4">
-						<div class="coly">...</div>
-						<div class="coly">...</div>
-						<div class="coly">...</div>
-						<div class="coly">...</div>
-						<div class="coly">...</div>
-						<div class="coly">...</div>
-						<div class="coly">...</div>
-						<div class="coly">...</div>
-					</div>
-				</div>
-			</code><!--
-	--></pre>
+            // this is needed otherwise the breakpoint
+            // would be attached to the class name therefore
+            // the class would be difficult to read
+            bpDivider       : '-'
+        );
+      </code><!--
+  --></pre>
+    <pre class="doc-custom__source"><!--
+    --><code>
+        <!-- Now you can build a grid like this -->
+        <div class="wrap">
+          <div class="gridy-12 gridy-s-6 gridy-m-4">
+            <div class="coly">...</div>
+            <div class="coly">...</div>
+            <div class="coly">...</div>
+            <div class="coly">...</div>
+            <div class="coly">...</div>
+            <div class="coly">...</div>
+            <div class="coly">...</div>
+            <div class="coly">...</div>
+          </div>
+        </div>
+      </code><!--
+  --></pre>
 
-		<p>Maybe you want a <strong>6 columns</strong> grid with <strong>30 pixels gutter</strong>?</p>
-		<pre class="doc-custom__source"><!--
-		--><code>
-				$gutter: 30px;
-				$gyVars: (
-						...
-						colTot          : 6,
-						gutter          : $gutter, // total
-						colBottom       : $gutter, // usually same as gutter
-						...
-				);
-			</code><!--
-	--></pre>
+    <p>Maybe you want a <strong>6 columns</strong> grid with <strong>30 pixels gutter</strong>?</p>
+    <pre class="doc-custom__source"><!--
+    --><code>
+        $gutter: 30px;
+        $gyVars: (
+            ...
+            colTot          : 6,
+            gutter          : $gutter, // total
+            colBottom       : $gutter, // usually same as gutter
+            ...
+        );
+      </code><!--
+  --></pre>
 
-		<p>
-			What about those media queries...why not <strong>add more breakpoints</strong>?
-		</p>
-		<pre class="doc-custom__source"><!--
-		--><code>
-				// Note: be careful not to add too many breakpoints
-				// or the generated CSS file will become huge.
+    <p>
+      What about those media queries...why not <strong>add more breakpoints</strong>?
+    </p>
+    <pre class="doc-custom__source"><!--
+    --><code>
+        // Note: be careful not to add too many breakpoints
+        // or the generated CSS file will become huge.
 
-				// Also, remember not to use as breakpoints names
-				// the reserved words letters "g" or "c".
-				$gyVars: (
-						...
-						bp              : (
-								s       : 400px, // small
-								sl      : 580px, // small larger
-								m       : 768px, // medium
-								ml      : 992px, // medium larger
-								l       : 1100px // large
-								xl      : 1200px // extra large
-						)
-				);
-			</code><!--
-	--></pre>
-	</div>
+        // Also, remember not to use as breakpoints names
+        // the reserved words letters "g" or "c".
+        $gyVars: (
+            ...
+            bp       : (
+                s    : 400px, // small
+                sl   : 580px, // small larger
+                m    : 768px, // medium
+                ml   : 992px, // medium larger
+                l    : 1100px // large
+                xl   : 1200px // extra large
+            )
+        );
+      </code><!--
+  --></pre>
+  </div>
 </div>

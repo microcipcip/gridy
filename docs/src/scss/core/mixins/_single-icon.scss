@@ -16,27 +16,27 @@
 // }
 
 @mixin single-icon($width:n, $height:n, $line-height:n, $font-size:n, $icon:n, $display: n) {
-	@extend %icons;
-	@if $display != n {
-		display: $display;
-	}
-	@if $icon != n {
-		content: $icon;
-	}
-	@if $width != n {
-		width: $width;
-	}
-	// set to n if you don't need the width
-	@if $height != n {
-		height: $height;
-	}
-	// set to n if you don't need the height
-	@if $line-height != n {
-		line-height: $line-height;
-	} @else if $height != n {
-		line-height: $line-height;
-	}
-	@if $font-size != n {
-		font-size: $font-size;
-	}
+  @extend %icons;
+  @if $display != n {
+    display: $display;
+  }
+  @if $icon != n {
+    content: $icon;
+  }
+  @if $width != n {
+    width: $width;
+  }
+  // set to n if you don't need the width
+  @if $height != n {
+    height: $height;
+  }
+  // set to n if you don't need the height
+  @if $line-height != n {
+    line-height: $line-height;
+  } @else if $height != n {
+    line-height: $line-height;
+  }
+  @if $font-size != n {
+    font-size: $font-size;
+  }
 }

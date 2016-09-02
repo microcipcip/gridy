@@ -120,21 +120,21 @@ $xxxxxl: 1600px;
 $xxxxxxl: 1700px;
 
 $breakpoints: (
-		(xxxs, $xxxs),
-		(xxs, $xxs),
-		(xs, $xs),
-		(s, $s),
-		(sl, $sl),
-		(sl2, $sl2),
-		(m, $m),
-		(ml, $ml),
-		(l, $l),
-		(xl, $xl),
-		(xxl, $xxl),
-		(xxxl, $xxxl),
-		(xxxxl, $xxxxl),
-		(xxxxxl, $xxxxxl),
-		(xxxxxxl, $xxxxxxl)
+    (xxxs, $xxxs),
+    (xxs, $xxs),
+    (xs, $xs),
+    (s, $s),
+    (sl, $sl),
+    (sl2, $sl2),
+    (m, $m),
+    (ml, $ml),
+    (l, $l),
+    (xl, $xl),
+    (xxl, $xxl),
+    (xxxl, $xxxl),
+    (xxxxl, $xxxxl),
+    (xxxxxl, $xxxxxl),
+    (xxxxxxl, $xxxxxxl)
 );
 $bpLength: length($breakpoints);
 

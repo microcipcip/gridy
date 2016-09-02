@@ -1,16 +1,17 @@
 html {
-	overflow-y: scroll;
+  overflow-y: scroll;
 }
+
 body {
-	min-width: $device-width-min;
-	background: $base-background-color;
-	color: $base-font-color;
-	font-family: $base-font-family;
-	font-size: $base-font-size  / 1.2;
-	line-height: $base-line-height;
-	@include mq($ml) {
-		font-size: $base-font-size;
-	}
+  min-width: $device-width-min;
+  background: $base-background-color;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size  / 1.2;
+  line-height: $base-line-height;
+  @include mq($ml) {
+    font-size: $base-font-size;
+  }
 }
 
 h1,
@@ -19,114 +20,123 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0 0 $small-spacing/2;
-	color: $red;
-	font-family: $heading-font-family;
-	font-size: modular-scale(1);
-	font-weight: normal;
-	line-height: $heading-line-height;
+  margin: 0 0 $small-spacing/2;
+  color: $red;
+  font-family: $heading-font-family;
+  font-size: modular-scale(1);
+  font-weight: normal;
+  line-height: $heading-line-height;
 }
+
 h1 {
-	font-size: $h1-font-size;
+  font-size: $h1-font-size;
 }
+
 h2 {
-	font-size: $h2-font-size;
+  font-size: $h2-font-size;
 }
+
 h3 {
-	font-size: $h3-font-size;
+  font-size: $h3-font-size;
 }
+
 h4 {
-	font-size: $h4-font-size;
+  font-size: $h4-font-size;
 }
+
 h5 {
-	font-size: $h5-font-size;
+  font-size: $h5-font-size;
 }
+
 h6 {
-	font-size: $h6-font-size;
+  font-size: $h6-font-size;
 }
+
 p {
-	margin: 0 0 $small-spacing;
+  margin: 0 0 $small-spacing;
 }
+
 a {
-	cursor: pointer;
-	color: $action-color;
-	text-decoration: none;
-	&:active,
-	&:focus,
-	&:hover {
-		color: shade($action-color, 25%);
-	}
+  cursor: pointer;
+  color: $action-color;
+  text-decoration: none;
+  &:active,
+  &:focus,
+  &:hover {
+    color: shade($action-color, 25%);
+  }
 }
+
 hr {
-	margin: $base-spacing 0;
-	border-bottom: $base-border;
-	border-left: 0;
-	border-right: 0;
-	border-top: 0;
+  margin: $base-spacing 0;
+  border-bottom: $base-border;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
 }
 
 .typ {
-	max-width: 800px;
-	margin-bottom: $pad;
-	font-size: 1.1em;
-	&.-text-medium {
-		font-size: 1.4em;
-	}
-	&.-text-left {
-		text-align: left;
-	}
-	&.-text-center {
-		text-align: center;
-	}
-	&.-text-right {
-		text-align: right;
-	}
-	&.-center {
-		margin: 0 auto $pad;
-	}
-	&.-full-width {
-		max-width: 100%;
-	}
-	> *:first-child {
-		margin-top: 0;
-	}
-	> *:last-child {
-		margin-bottom: 0;
-	}
-	ul {
-		margin-bottom: $base-spacing / 2;
-		padding-left: $base-spacing;
-		list-style-type: disc;
-	}
-	ol {
-		margin-bottom: $base-spacing / 2;
-		padding-left: $base-spacing;
-		list-style-type: decimal;
-	}
-	
-	a:not(.btn, .btn-ico) {
-		color: $black;
-		text-decoration: underline;
-		&:active,
-		&:hover {
-			color: $white;
-			background: $black;
-		}
-	}
-	
-	h1 {
-		text-align: center;
-	}
-	
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		margin-top: 1em;
-	}
-	.typ-download {
-		margin: $pad-l 0;
-	}
+  max-width: 800px;
+  margin-bottom: $pad;
+  font-size: 1.1em;
+  &.-text-medium {
+    font-size: 1.4em;
+  }
+  &.-text-left {
+    text-align: left;
+  }
+  &.-text-center {
+    text-align: center;
+  }
+  &.-text-right {
+    text-align: right;
+  }
+  &.-center {
+    margin: 0 auto $pad;
+  }
+  &.-full-width {
+    max-width: 100%;
+  }
+  > *:first-child {
+    margin-top: 0;
+  }
+  > *:last-child {
+    margin-bottom: 0;
+  }
+  ul {
+    margin-bottom: $base-spacing / 2;
+    padding-left: $base-spacing;
+    list-style-type: disc;
+  }
+  ol {
+    margin-bottom: $base-spacing / 2;
+    padding-left: $base-spacing;
+    list-style-type: decimal;
+  }
+
+  a:not(.btn, .btn-ico) {
+    color: $black;
+    text-decoration: underline;
+    &:active,
+    &:hover {
+      color: $white;
+      background: $black;
+    }
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1em;
+  }
+  .typ-download {
+    margin: $pad-l 0;
+  }
 }

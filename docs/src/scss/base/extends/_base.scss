@@ -3,7 +3,7 @@
 // ====================================================================
 
 %cf {
-	@include cf();
+  @include cf();
 }
 
 
@@ -13,17 +13,17 @@
 // ====================================================================
 
 %icons {
-	font-family: $font-custom-name;
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
+  font-family: $font-custom-name;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
@@ -33,16 +33,17 @@
 // ====================================================================
 
 %wrap {
-	max-width: $device-width-max;
-	margin: 0 auto;
-	padding-left: 20px;
-	padding-right: 20px;
+  max-width: $device-width-max;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
+
 @include mq($m) {
-	%wrap {
-		padding-left: 30px;
-		padding-right: 30px;
-	}
+  %wrap {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 
@@ -52,7 +53,7 @@
 // ====================================================================
 
 %img-resp {
-	display: block;
-	width: 100%;
-	height: auto;
+  display: block;
+  width: 100%;
+  height: auto;
 }

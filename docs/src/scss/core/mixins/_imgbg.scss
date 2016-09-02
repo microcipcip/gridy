@@ -10,7 +10,7 @@
 // }
 
 @mixin imgbg($url) {
-	width: image-width($url);
-	height: image-height($url);
-	background-image: image-url($url);
+  width: image-width($url);
+  height: image-height($url);
+  background-image: image-url($url);
 }

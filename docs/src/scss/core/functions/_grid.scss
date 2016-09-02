@@ -3,5 +3,5 @@
 // ====================================================================
 
 @function grid-col($colNumber, $colTot) {
-	@return ($colNumber / $colTot) * 100%;
+  @return ($colNumber / $colTot) * 100%;
 }

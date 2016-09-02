@@ -1,53 +1,53 @@
 .header {
-	z-index: z('header');
-	position: relative;
-	width: 100%;
-	background: transparentize($black, .95);
-	text-align: center;
-	box-shadow: 0 0 30px transparentize($black, 0.90);
-	&:before {
-		z-index: z('default') - 2;
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: repeating-linear-gradient(-30deg, transparentize($white, .4) 0px, transparentize($black, .99) 5px);
-	}
-	&:after {
-		z-index: z('default') - 2;
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: repeating-linear-gradient(10deg, transparentize($white, .1) 0px, transparentize($black, 1) 5px);
-	}
-	@include mq($ml) {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: $header-ml-w;
-		height: 100vh;
-		padding: 40px 50px;
-		overflow-x: hidden;
-		overflow-y: auto;
-		transition: width .2s ease-in-out;
-	}
-	@include mq($l) {
-		width: $header-l-w;
-	}
-	@at-root {
-		body {
-			@include mq($ml) {
-				padding-left: $header-ml-w;
-				transition: padding .2s ease-in-out;
-			}
-			@include mq($l) {
-				padding-left: $header-l-w;
-			}
-		}
-	}
+  z-index: z('header');
+  position: relative;
+  width: 100%;
+  background: transparentize($black, .95);
+  text-align: center;
+  box-shadow: 0 0 30px transparentize($black, 0.90);
+  &:before {
+    z-index: z('default') - 2;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(-30deg, transparentize($white, .4) 0px, transparentize($black, .99) 5px);
+  }
+  &:after {
+    z-index: z('default') - 2;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(10deg, transparentize($white, .1) 0px, transparentize($black, 1) 5px);
+  }
+  @include mq($ml) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $header-ml-w;
+    height: 100vh;
+    padding: 40px 50px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: width .2s ease-in-out;
+  }
+  @include mq($l) {
+    width: $header-l-w;
+  }
+  @at-root {
+    body {
+      @include mq($ml) {
+        padding-left: $header-ml-w;
+        transition: padding .2s ease-in-out;
+      }
+      @include mq($l) {
+        padding-left: $header-l-w;
+      }
+    }
+  }
 }

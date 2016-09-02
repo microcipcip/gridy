@@ -1,9 +1,9 @@
 main {
-	position: relative;
-	width: 100%;
-	min-height: 100vh;
-	padding: 80px 6vw;
-	@include mq($l) {
-		padding: 100px 6vw;
-	}
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 6vw;
+  @include mq($l) {
+    padding: 100px 6vw;
+  }
 }

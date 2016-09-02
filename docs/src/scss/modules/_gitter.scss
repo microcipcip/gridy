@@ -1,0 +1,13 @@
+#app {
+  .gitter-open-chat-button {
+    padding: .5em 2em;
+    background: $red;
+    font-size: 18px;
+    font-family: $base-font-family;
+    text-transform: capitalize;
+    border-radius: 0;
+    &:hover {
+      background: darken($red, 10%);
+    }
+  }
+}

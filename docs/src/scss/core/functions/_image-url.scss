@@ -8,5 +8,5 @@
 // }
 
 @function image-url($url) {
-	@return url("#{$image-url-path}#{$url}");
+  @return url("#{$image-url-path}#{$url}");
 }

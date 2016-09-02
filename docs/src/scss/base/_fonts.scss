@@ -3,10 +3,10 @@
 
 // icomoon
 @font-face {
-	font-family: $font-custom-name;
-	src: url('#{$font-path}/#{$font-custom-name}.ttf?#{$font-custom-query}') format('truetype'),
-	url('#{$font-path}/#{$font-custom-name}.woff?#{$font-custom-query}') format('woff'),
-	url('#{$font-path}/#{$font-custom-name}.svg?#{$font-custom-query}##{$font-custom-name}') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: $font-custom-name;
+  src: url('#{$font-path}/#{$font-custom-name}.ttf?#{$font-custom-query}') format('truetype'),
+  url('#{$font-path}/#{$font-custom-name}.woff?#{$font-custom-query}') format('woff'),
+  url('#{$font-path}/#{$font-custom-name}.svg?#{$font-custom-query}##{$font-custom-name}') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }

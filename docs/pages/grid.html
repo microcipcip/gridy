@@ -1,270 +1,270 @@
 <div class="typ -center -text-center -text-medium">
-	<h1>Grid</h1>
-	<p>
-		Gridy is easy to use. Just add a <code>gy="g"</code> data attribute to make the grid and a
-		<code>gy="c"</code> data attribute to make the columns. Let's see some examples.
-	</p>
+  <h1>Grid</h1>
+  <p>
+    Gridy is easy to use. Just add a <code>gy="g"</code> data attribute to make the grid and a
+    <code>gy="c"</code> data attribute to make the columns. Let's see some examples.
+  </p>
 </div>
 
 <div class="spacer"><div class="spacer__mask"></div></div>
 
 <div class="doc">
-	<div class="doc__typ typ">
-		<h3>Automatic width</h3>
-		<p>
-			Add <code>gy="g"</code> to the parent and <code>gy="c"</code> to the children,
-			and the columns will <strong>get automagically equal width size</strong>.
-		</p>
-	</div>
-	<div class="doc__grid">
-		<div gy="g">
-			<div gy="c"><div class="doc__box"></div></div>
-		</div>
-		<div gy="g">
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-		</div>
-		<div gy="g">
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-		</div>
-		<div gy="g">
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-		</div>
-		<div gy="g">
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-		</div>
-	</div>
-	<div class="doc__actions typ">
-		<a class="btn-ico -source" source-target="automatic" href="#">Source</a>
-		<a class="btn-ico -codepen" href="http://codepen.io/microcipcip/pen/Gqaaqz/?editors=1000" target="_blank">Codepen</a>
-	</div>
-	<pre class="doc__source" source="automatic"><code></code></pre>
+  <div class="doc__typ typ">
+    <h3>Automatic width</h3>
+    <p>
+      Add <code>gy="g"</code> to the parent and <code>gy="c"</code> to the children,
+      and the columns will <strong>get automagically equal width size</strong>.
+    </p>
+  </div>
+  <div class="doc__grid">
+    <div gy="g">
+      <div gy="c"><div class="doc__box"></div></div>
+    </div>
+    <div gy="g">
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+    </div>
+    <div gy="g">
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+    </div>
+    <div gy="g">
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+    </div>
+    <div gy="g">
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+    </div>
+  </div>
+  <div class="doc__actions typ">
+    <a class="btn-ico -source" source-target="automatic" href="#">Source</a>
+    <a class="btn-ico -codepen" href="http://codepen.io/microcipcip/pen/Gqaaqz/?editors=1000" target="_blank">Codepen</a>
+  </div>
+  <pre class="doc__source" source="automatic"><code></code></pre>
 </div>
 
 
 <div class="doc">
-	<div class="doc__typ typ">
-		<h3>Responsive method, grid level</h3>
-		<p>
-			You can create a responsive grid by <strong>setting the sizing directly at the grid level</strong>.
-			For example, given the breakpoints <code>s, m, l</code>, we could create a grid with full width columns on mobile, 2 columns on small screen and
-			4 columns on tablet with
-			<code>gy="g-1 gs-2 gm-4"</code>.
-		</p>
-	</div>
-	<div class="doc__grid">
-		<div gy="g-1 gs-2">
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-		</div>
-		<div gy="g-1 gs-3">
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-		</div>
-		<div gy="g-1 gs-2 gm-4">
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-		</div>
-		<div gy="g-1 gs-2 gm-4 gl-8">
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-		</div>
-		<div gy="g-2 gs-4 gm-6 gl-12">
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-		</div>
-	</div>
-	<div class="doc__actions typ">
-		<a class="btn-ico -source" source-target="responsive-grid" href="">Source</a>
-		<a class="btn-ico -codepen" href="http://codepen.io/microcipcip/pen/NAVVbP/?editors=1000" target="_blank">Codepen</a>
-	</div>
-	<pre class="doc__source" source="responsive-grid"><code></code></pre>
+  <div class="doc__typ typ">
+    <h3>Responsive method, grid level</h3>
+    <p>
+      You can create a responsive grid by <strong>setting the sizing directly at the grid level</strong>.
+      For example, given the breakpoints <code>s, m, l</code>, we could create a grid with full width columns on mobile, 2 columns on small screen and
+      4 columns on tablet with
+      <code>gy="g-1 gs-2 gm-4"</code>.
+    </p>
+  </div>
+  <div class="doc__grid">
+    <div gy="g-1 gs-2">
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+    </div>
+    <div gy="g-1 gs-3">
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+    </div>
+    <div gy="g-1 gs-2 gm-4">
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+    </div>
+    <div gy="g-1 gs-2 gm-4 gl-8">
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+    </div>
+    <div gy="g-2 gs-4 gm-6 gl-12">
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+    </div>
+  </div>
+  <div class="doc__actions typ">
+    <a class="btn-ico -source" source-target="responsive-grid" href="">Source</a>
+    <a class="btn-ico -codepen" href="http://codepen.io/microcipcip/pen/NAVVbP/?editors=1000" target="_blank">Codepen</a>
+  </div>
+  <pre class="doc__source" source="responsive-grid"><code></code></pre>
 </div>
 
 
 <div class="doc">
-	<div class="doc__typ typ">
-		<h3>Responsive method, columns level</h3>
-		<p>
-			You can also create a responsive grid by <strong>setting the sizing directly at the column level</strong>.
-			For example we could create a grid with full width columns on mobile and 2 columns on small screen with
-			<code>gy="c-12 cs-6"</code>.
-		</p>
-	</div>
-	<div class="doc__grid">
-		<div gy="g">
-			<div gy="c-12 cs-6"><div class="doc__box"></div></div>
-			<div gy="c-12 cs-6"><div class="doc__box"></div></div>
-		</div>
-		<div gy="g">
-			<div gy="c-12 cs-4"><div class="doc__box"></div></div>
-			<div gy="c-12 cs-4"><div class="doc__box"></div></div>
-			<div gy="c-12 cs-4"><div class="doc__box"></div></div>
-		</div>
-		<div gy="g">
-			<div gy="c-12 cs-6 cm-3"><div class="doc__box"></div></div>
-			<div gy="c-12 cs-6 cm-3"><div class="doc__box"></div></div>
-			<div gy="c-12 cs-6 cm-3"><div class="doc__box"></div></div>
-			<div gy="c-12 cs-6 cm-3"><div class="doc__box"></div></div>
-		</div>
-		<div gy="g">
-			<div gy="c-12 cs-6 cm-4 cl-2"><div class="doc__box"></div></div>
-			<div gy="c-12 cs-6 cm-4 cl-2"><div class="doc__box"></div></div>
-			<div gy="c-12 cs-6 cm-4 cl-2"><div class="doc__box"></div></div>
-			<div gy="c-12 cs-6 cm-4 cl-2"><div class="doc__box"></div></div>
-			<div gy="c-12 cs-6 cm-4 cl-2"><div class="doc__box"></div></div>
-			<div gy="c-12 cs-6 cm-4 cl-2"><div class="doc__box"></div></div>
-		</div>
-	</div>
+  <div class="doc__typ typ">
+    <h3>Responsive method, columns level</h3>
+    <p>
+      You can also create a responsive grid by <strong>setting the sizing directly at the column level</strong>.
+      For example we could create a grid with full width columns on mobile and 2 columns on small screen with
+      <code>gy="c-12 cs-6"</code>.
+    </p>
+  </div>
+  <div class="doc__grid">
+    <div gy="g">
+      <div gy="c-12 cs-6"><div class="doc__box"></div></div>
+      <div gy="c-12 cs-6"><div class="doc__box"></div></div>
+    </div>
+    <div gy="g">
+      <div gy="c-12 cs-4"><div class="doc__box"></div></div>
+      <div gy="c-12 cs-4"><div class="doc__box"></div></div>
+      <div gy="c-12 cs-4"><div class="doc__box"></div></div>
+    </div>
+    <div gy="g">
+      <div gy="c-12 cs-6 cm-3"><div class="doc__box"></div></div>
+      <div gy="c-12 cs-6 cm-3"><div class="doc__box"></div></div>
+      <div gy="c-12 cs-6 cm-3"><div class="doc__box"></div></div>
+      <div gy="c-12 cs-6 cm-3"><div class="doc__box"></div></div>
+    </div>
+    <div gy="g">
+      <div gy="c-12 cs-6 cm-4 cl-2"><div class="doc__box"></div></div>
+      <div gy="c-12 cs-6 cm-4 cl-2"><div class="doc__box"></div></div>
+      <div gy="c-12 cs-6 cm-4 cl-2"><div class="doc__box"></div></div>
+      <div gy="c-12 cs-6 cm-4 cl-2"><div class="doc__box"></div></div>
+      <div gy="c-12 cs-6 cm-4 cl-2"><div class="doc__box"></div></div>
+      <div gy="c-12 cs-6 cm-4 cl-2"><div class="doc__box"></div></div>
+    </div>
+  </div>
 
-	<div class="doc__actions typ">
-		<a class="btn-ico -source" source-target="responsive-column" href="#">Source</a>
-		<a class="btn-ico -codepen" href="http://codepen.io/microcipcip/pen/xONNRp?editors=1000" target="_blank">Codepen</a>
-	</div>
-	<pre class="doc__source" source="responsive-column"><code></code></pre>
+  <div class="doc__actions typ">
+    <a class="btn-ico -source" source-target="responsive-column" href="#">Source</a>
+    <a class="btn-ico -codepen" href="http://codepen.io/microcipcip/pen/xONNRp?editors=1000" target="_blank">Codepen</a>
+  </div>
+  <pre class="doc__source" source="responsive-column"><code></code></pre>
 </div>
 
 
 <div class="doc">
-	<div class="doc__typ typ">
-		<h3>Responsive method, mix grid and columns level</h3>
-		<p>
-			Why not mix the two modes? For example you could set the sizing <strong>at both the grid and the column level</strong>,
-			and the grid level settings will be the fallback if a sizing is not set at the column level.
-		</p>
-	</div>
-	<div class="doc__grid">
-		<div gy="g-4">
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c"><div class="doc__box"></div></div>
-			<div gy="c-6"><div class="doc__box"></div></div>
-			<div gy="c-6"><div class="doc__box"></div></div>
-			<div gy="c-6"><div class="doc__box"></div></div>
-			<div gy="c-12"><div class="doc__box"></div></div>
-			<div gy="c-6 cm-3"><div class="doc__box"></div></div>
-			<div gy="c-6 cm-3"><div class="doc__box"></div></div>
-			<div gy="c-6 cm-3"><div class="doc__box"></div></div>
-			<div gy="c-6 cm-3"><div class="doc__box"></div></div>
-		</div>
-	</div>
-	<div class="doc__actions typ">
-		<a class="btn-ico -source" source-target="responsive-mix" href="#">Source</a>
-		<a class="btn-ico -codepen" href="http://codepen.io/microcipcip/pen/XKwwZZ?editors=1000" target="_blank">Codepen</a>
-	</div>
-	<pre class="doc__source" source="responsive-mix"><code></code></pre>
+  <div class="doc__typ typ">
+    <h3>Responsive method, mix grid and columns level</h3>
+    <p>
+      Why not mix the two modes? For example you could set the sizing <strong>at both the grid and the column level</strong>,
+      and the grid level settings will be the fallback if a sizing is not set at the column level.
+    </p>
+  </div>
+  <div class="doc__grid">
+    <div gy="g-4">
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c"><div class="doc__box"></div></div>
+      <div gy="c-6"><div class="doc__box"></div></div>
+      <div gy="c-6"><div class="doc__box"></div></div>
+      <div gy="c-6"><div class="doc__box"></div></div>
+      <div gy="c-12"><div class="doc__box"></div></div>
+      <div gy="c-6 cm-3"><div class="doc__box"></div></div>
+      <div gy="c-6 cm-3"><div class="doc__box"></div></div>
+      <div gy="c-6 cm-3"><div class="doc__box"></div></div>
+      <div gy="c-6 cm-3"><div class="doc__box"></div></div>
+    </div>
+  </div>
+  <div class="doc__actions typ">
+    <a class="btn-ico -source" source-target="responsive-mix" href="#">Source</a>
+    <a class="btn-ico -codepen" href="http://codepen.io/microcipcip/pen/XKwwZZ?editors=1000" target="_blank">Codepen</a>
+  </div>
+  <pre class="doc__source" source="responsive-mix"><code></code></pre>
 </div>
 
 
 <div class="doc">
-	<div class="doc__typ typ">
-		<h3>Responsive method, from fixed width to auto width</h3>
-		<p>
-			Sometimes you may want to revert a fixed width column to its auto state.
-			You can set it with <code>gy="c-12 cm-4 cl-auto"</code>
-		</p>
-	</div>
-	<div class="doc__grid">
-		<div gy="g">
-			<div gy="c-12 cm-4"><div class="doc__box"></div></div>
-			<div gy="c-12 cm-auto"><div class="doc__box"></div></div>
-		</div>
-	</div>
-	<div class="doc__actions typ">
-		<a class="btn-ico -source" source-target="responsive-width-auto" href="#">Source</a>
-		<a class="btn-ico -codepen" href="http://codepen.io/microcipcip/pen/bZXLLP?editors=1000" target="_blank">Codepen</a>
-	</div>
-	<pre class="doc__source" source="responsive-width-auto"><code></code></pre>
+  <div class="doc__typ typ">
+    <h3>Responsive method, from fixed width to auto width</h3>
+    <p>
+      Sometimes you may want to revert a fixed width column to its auto state.
+      You can set it with <code>gy="c-12 cm-4 cl-auto"</code>
+    </p>
+  </div>
+  <div class="doc__grid">
+    <div gy="g">
+      <div gy="c-12 cm-4"><div class="doc__box"></div></div>
+      <div gy="c-12 cm-auto"><div class="doc__box"></div></div>
+    </div>
+  </div>
+  <div class="doc__actions typ">
+    <a class="btn-ico -source" source-target="responsive-width-auto" href="#">Source</a>
+    <a class="btn-ico -codepen" href="http://codepen.io/microcipcip/pen/bZXLLP?editors=1000" target="_blank">Codepen</a>
+  </div>
+  <pre class="doc__source" source="responsive-width-auto"><code></code></pre>
 </div>
 
 
 <div class="doc">
-	<div class="doc__typ typ">
-		<h3>No more rows!</h3>
-		<p>
-			The biggest difference with other grid systems is that you don't need rows anymore!
-		</p>
-	</div>
-	<div class="doc__grid">
-		<div gy="g">
-			<div gy="c-2"><div class="doc__box"></div></div>
-			<div gy="c-10"><div class="doc__box"></div></div>
-			<div gy="c-4"><div class="doc__box"></div></div>
-			<div gy="c-8"><div class="doc__box"></div></div>
-			<div gy="c-6"><div class="doc__box"></div></div>
-			<div gy="c-6"><div class="doc__box"></div></div>
-			<div gy="c-8"><div class="doc__box"></div></div>
-			<div gy="c-4"><div class="doc__box"></div></div>
-			<div gy="c-10"><div class="doc__box"></div></div>
-			<div gy="c-2"><div class="doc__box"></div></div>
-			<div gy="c-12"><div class="doc__box"></div></div>
-		</div>
-	</div>
+  <div class="doc__typ typ">
+    <h3>No more rows!</h3>
+    <p>
+      The biggest difference with other grid systems is that you don't need rows anymore!
+    </p>
+  </div>
+  <div class="doc__grid">
+    <div gy="g">
+      <div gy="c-2"><div class="doc__box"></div></div>
+      <div gy="c-10"><div class="doc__box"></div></div>
+      <div gy="c-4"><div class="doc__box"></div></div>
+      <div gy="c-8"><div class="doc__box"></div></div>
+      <div gy="c-6"><div class="doc__box"></div></div>
+      <div gy="c-6"><div class="doc__box"></div></div>
+      <div gy="c-8"><div class="doc__box"></div></div>
+      <div gy="c-4"><div class="doc__box"></div></div>
+      <div gy="c-10"><div class="doc__box"></div></div>
+      <div gy="c-2"><div class="doc__box"></div></div>
+      <div gy="c-12"><div class="doc__box"></div></div>
+    </div>
+  </div>
 
-	<div class="doc__actions typ">
-		<a class="btn-ico -source" source-target="responsive-no-rows" href="#">Source</a>
-		<a class="btn-ico -codepen" href="http://codepen.io/microcipcip/pen/LkooZJ?editors=1000" target="_blank">Codepen</a>
-	</div>
-	<pre class="doc__source" source="responsive-no-rows"><code></code></pre>
+  <div class="doc__actions typ">
+    <a class="btn-ico -source" source-target="responsive-no-rows" href="#">Source</a>
+    <a class="btn-ico -codepen" href="http://codepen.io/microcipcip/pen/LkooZJ?editors=1000" target="_blank">Codepen</a>
+  </div>
+  <pre class="doc__source" source="responsive-no-rows"><code></code></pre>
 </div>
 
 
 <div class="doc">
-	<div class="doc__typ typ">
-		<h3>Nesting</h3>
-		<p>
-			Another feature of Gridy is the possibility of <strong>nesting directly inside the columns</strong> (again, without adding rows!).
-		</p>
-	</div>
-	<div class="doc__grid">
-		<div gy="g">
-			<div gy="c-6"><div class="doc__box"></div></div>
-			<div gy="c-6 g">
-				<div gy="c-12"><div class="doc__box"></div></div>
-				<div gy="c-6"><div class="doc__box"></div></div>
-				<div gy="c-6 g">
-					<div gy="c-12"><div class="doc__box"></div></div>
-					<div gy="c-4"><div class="doc__box"></div></div>
-					<div gy="c-4"><div class="doc__box"></div></div>
-					<div gy="c-4 g">
-						<div gy="c-12"><div class="doc__box"></div></div>
-						<div gy="c-6"><div class="doc__box"></div></div>
-						<div gy="c-6"><div class="doc__box"></div></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="doc__actions typ">
-		<a class="btn-ico -source" source-target="nesting" href="#">Source</a>
-		<a class="btn-ico -codepen" href="http://codepen.io/microcipcip/pen/KrLLQN?editors=1000" target="_blank">Codepen</a>
-	</div>
-	<pre class="doc__source" source="nesting"><code></code></pre>
+  <div class="doc__typ typ">
+    <h3>Nesting</h3>
+    <p>
+      Another feature of Gridy is the possibility of <strong>nesting directly inside the columns</strong> (again, without adding rows!).
+    </p>
+  </div>
+  <div class="doc__grid">
+    <div gy="g">
+      <div gy="c-6"><div class="doc__box"></div></div>
+      <div gy="c-6 g">
+        <div gy="c-12"><div class="doc__box"></div></div>
+        <div gy="c-6"><div class="doc__box"></div></div>
+        <div gy="c-6 g">
+          <div gy="c-12"><div class="doc__box"></div></div>
+          <div gy="c-4"><div class="doc__box"></div></div>
+          <div gy="c-4"><div class="doc__box"></div></div>
+          <div gy="c-4 g">
+            <div gy="c-12"><div class="doc__box"></div></div>
+            <div gy="c-6"><div class="doc__box"></div></div>
+            <div gy="c-6"><div class="doc__box"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="doc__actions typ">
+    <a class="btn-ico -source" source-target="nesting" href="#">Source</a>
+    <a class="btn-ico -codepen" href="http://codepen.io/microcipcip/pen/KrLLQN?editors=1000" target="_blank">Codepen</a>
+  </div>
+  <pre class="doc__source" source="nesting"><code></code></pre>
 </div>

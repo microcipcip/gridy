@@ -12,14 +12,14 @@
 // }
 
 @mixin flow($pad-m: ($pad / 2), $pad-d: $pad, $mq: $m, $type: div) {
-	margin-top: (-$pad-m);
-	> #{$type} {
-		margin-top: $pad-m;
-	}
-	@include mq($mq) {
-		margin-top: (-$pad-d);
-		> #{$type} {
-			margin-top: $pad-d;
-		}
-	}
+  margin-top: (-$pad-m);
+  > #{$type} {
+    margin-top: $pad-m;
+  }
+  @include mq($mq) {
+    margin-top: (-$pad-d);
+    > #{$type} {
+      margin-top: $pad-d;
+    }
+  }
 }

@@ -1,54 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<title>Gridy | Flexbox grid system powered by SASS</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" href="docs/dist/css/styles.css"/>
+  <meta charset="utf-8"/>
+  <title>Gridy | Flexbox grid system powered by SASS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="docs/dist/css/styles.css"/>
 </head>
 <body id="app">
-	<!-- header -->
-	<div class="header" v-el:header>
-		<a class="logo" v-link="{ path: '/'}">
-			<img class="logo__img" src="docs/src/img/general/logo.png" alt="">
-			<span class="logo__text">Gridy</span>
-		</a>
-		<div class="nav-main__toggler" @click="toggleNav">
-			<span class="nav-main__toggler-el -el1"></span>
-			<span class="nav-main__toggler-el -el2"></span>
-			<span class="nav-main__toggler-el -el3"></span>
-		</div>
-		<nav class="navs" v-el:navs>
-			<ul class="nav">
-				<li class="nav__item" v-link-active><a class="nav__link" v-link="{ path: '/grid' }">Grid</a></li>
-				<li class="nav__item" v-link-active><a class="nav__link" v-link="{ path: '/helpers' }">Helpers</a></li>
-				<li class="nav__item" v-link-active><a class="nav__link" v-link="{ path: '/customization' }">Customization</a></li>
-				<li class="nav__item" v-link-active><a class="nav__link" v-link="{ path: '/demos' }">Demos &amp; Examples</a></li>
-			</ul>
-		</nav>
-	</div>
+<!-- header -->
+<div class="header" v-el:header>
+  <a class="logo" v-link="{ path: '/'}">
+    <img class="logo__img" src="docs/src/img/general/logo.png" alt="">
+    <span class="logo__text">Gridy</span>
+  </a>
+  <div class="nav-main__toggler" @click="toggleNav">
+    <span class="nav-main__toggler-el -el1"></span>
+    <span class="nav-main__toggler-el -el2"></span>
+    <span class="nav-main__toggler-el -el3"></span>
+  </div>
+  <nav class="navs" v-el:navs>
+    <ul class="nav">
+      <li class="nav__item" v-link-active><a class="nav__link" v-link="{ path: '/grid' }">Grid</a></li>
+      <li class="nav__item" v-link-active><a class="nav__link" v-link="{ path: '/helpers' }">Helpers</a></li>
+      <li class="nav__item" v-link-active><a class="nav__link" v-link="{ path: '/customization' }">Customization</a>
+      </li>
+      <li class="nav__item" v-link-active><a class="nav__link" v-link="{ path: '/demos' }">Demos &amp; Examples</a></li>
+    </ul>
+  </nav>
+</div>
 
-	<!-- main app -->
-	<main>
-		<div gy="wrap" v-el:wrap @click="delegations">
-			<div class="loader"><div class="loader-inner ball-scale-ripple-multiple"><div></div><div></div><div></div></div></div>
-			<router-view><slot></slot></router-view>
-		</div>
-	</main>
+<!-- main app -->
+<main>
+  <div gy="wrap" v-el:wrap @click="delegations">
+    <div class="loader">
+      <div class="loader-inner ball-scale-ripple-multiple">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <router-view>
+      <slot></slot>
+    </router-view>
+  </div>
+</main>
 
-	<!-- debugger -->
-	<!--<div class="debugger"><span></span><i></i></div>-->
+<!-- debugger -->
+<!--<div class="debugger"><span></span><i></i></div>-->
 
-	<!-- scripts -->
-	<script src="docs/dist/js/scripts.js"></script>
+<!-- scripts -->
+<script src="docs/dist/js/scripts.js"></script>
 
-	<!-- gitter chat widget -->
-	<script>
-		((window.gitter = {}).chat = {}).options = {
-			room: 'flex-gridy/Lobby'
-		};
-	</script>
-	<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+<!-- gitter chat widget -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'flex-gridy/Lobby'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 </body>
 </html>
