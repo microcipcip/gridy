@@ -4,10 +4,12 @@
 	</a>
 </p>
 
-<div stlye="text-align: center;">
-	<h1 style="border: none;">Gridy</h1>
-	<h2 style="border: none; margin-top: 0;">A kickass flex grid, powered by SASS</h2>
-</div>
+<h1 align="center">
+	Gridy <br>
+	<small>A kickass flex grid, powered by SASS</small>
+	<br>
+	<br>
+</h1>
 
 [![Join the chat at https://gitter.im/flex-gridy/Lobby](https://badges.gitter.im/flex-gridy/Lobby.svg)](https://gitter.im/flex-gridy/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
