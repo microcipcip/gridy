@@ -121,7 +121,10 @@ gulp.task('cssGrid', function () {
 			sourceComments: null,
 			precision: 7
 		}))
-		.pipe(prefix('last 2 version', '> 1%'))
+		.pipe(prefix({
+			browsers: ['last 2 versions', '> 1%'],
+			cascade: false
+		}))
 		.pipe(header(projectInfo, {pkg: project}))
 		.pipe(gulp.dest('dist'))
 		.pipe(minifyCSS())
@@ -135,7 +138,10 @@ gulp.task('css', function () {
 		.pipe(plumber())
 		// compile sass, combine media queries, autoprefix and minify
 		.pipe(sass({sourceComments: null}))
-		.pipe(prefix('last 2 version', '> 1%'))
+		.pipe(prefix({
+			browsers: ['last 2 versions', '> 1%'],
+			cascade: false
+		}))
 		.pipe(cssImgSize(path.imgPath))
 		.pipe(gulpif(!isDev, cssBase64({
 			baseDir: path.imgPath,

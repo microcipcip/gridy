@@ -64,7 +64,10 @@
 							sourceComments: null,
 							precision: 7
 						}))
-						.pipe(prefix('last 2 version'))
+						.pipe(prefix({
+							browsers: ['last 2 versions', '> 1%'],
+							cascade: false
+						}))
 						.pipe(gulp.dest('dist'))
 						.pipe(minifyCSS())
 						.pipe(rename('gridy.min.css'))
