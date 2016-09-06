@@ -1,6 +1,6 @@
 {
   "name": "Gridy",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "A Flexbox Gridy System",
   "author": "http://www.jertix.org",
   "main": "gulpfile.js",
