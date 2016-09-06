@@ -81,20 +81,23 @@
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse; }
 
-[gy-h~="g-column"] {
+[gy-h][gy-h~="g-column"] {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column; }
-  [gy-h~="g-column"] > [gy*="c"] {
+  [gy-h][gy-h~="g-column"] > [gy*="c"] {
     -ms-flex-preferred-size: auto;
     flex-basis: auto; }
 
-[gy-h~="g-column-reverse"] {
+[gy-h][gy-h~="g-column-reverse"] {
   -webkit-box-orient: vertical;
   -webkit-box-direction: reverse;
   -ms-flex-direction: column-reverse;
   flex-direction: column-reverse; }
+  [gy-h][gy-h~="g-column-reverse"] > [gy*="c"] {
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto; }
 
 [gy-h~="g-space-between"] {
   -webkit-box-pack: justify;

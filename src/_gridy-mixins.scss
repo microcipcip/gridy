@@ -128,14 +128,17 @@
   [#{$helperPrefix}~="#{$gridName}-reverse"] {
     flex-direction: row-reverse;
   }
-  [#{$helperPrefix}~="#{$gridName}-column"] {
+  [#{$helperPrefix}][#{$helperPrefix}~="#{$gridName}-column"] {
     flex-direction: column;
     > [#{$prefix}*="#{$colName}"] {
       flex-basis: auto;
     }
   }
-  [#{$helperPrefix}~="#{$gridName}-column-reverse"] {
+  [#{$helperPrefix}][#{$helperPrefix}~="#{$gridName}-column-reverse"] {
     flex-direction: column-reverse;
+    > [#{$prefix}*="#{$colName}"] {
+      flex-basis: auto;
+    }
   }
 
   // spaces between and around cols
