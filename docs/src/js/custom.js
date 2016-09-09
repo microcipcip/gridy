@@ -35,7 +35,7 @@
     },
     route: {
       activate: function (transition) {
-        this.timerRouteStart = Date.now() | 0
+        this.timerRouteStart = Date.now() || 0
         transition.next()
       },
       data: function (transition) {
@@ -45,7 +45,7 @@
 
         this.$http.get(pageUrl).then(function (response) {
           // display route after a small delay
-          this.timerRouteReady = Date.now() | 0
+          this.timerRouteReady = Date.now() || 0
           var timerDiff = 500 - (this.timerRouteReady - this.timerRouteStart)
 
           setTimeout(function () {
