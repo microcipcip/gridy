@@ -52,12 +52,18 @@
   $colBottom: map-get($gyMap, colBottom);
 
   [#{$prefix}~="#{$wrapName}"] {
+    box-sizing: border-box;
     max-width: $wrapWidth;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding-left: $gutter;
     padding-right: $gutter;
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
   }
   [#{$prefix}*="#{$gridName}"] {
     box-sizing: border-box;

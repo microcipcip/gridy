@@ -5,12 +5,17 @@
    *Website:       https://microcipcip.github.io/gridy/ 
 */ 
 [gy~="wrap"] {
+  box-sizing: border-box;
   max-width: 1200px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 16px;
   padding-right: 16px; }
+  [gy~="wrap"] *,
+  [gy~="wrap"] *::before,
+  [gy~="wrap"] *::after {
+    box-sizing: inherit; }
 
 [gy*="g"] {
   box-sizing: border-box;
