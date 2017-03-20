@@ -1,4 +1,5 @@
 .loader {
+  z-index: z('loader');
   visibility: visible;
   display: flex;
   justify-content: center;
