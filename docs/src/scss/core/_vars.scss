@@ -154,8 +154,8 @@ $prefix-for-spec: true;
 // z-index
 $z-layers: (
 		'modal' 200,
+    'header' 22,
     'loader' 21,
-		'header' 20,
 		'default' 1,
 		'bottomless'     -10000
 );
