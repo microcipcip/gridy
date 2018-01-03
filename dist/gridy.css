@@ -5,6 +5,7 @@
    *Website:       https://microcipcip.github.io/gridy/ 
 */ 
 [gy~="wrap"] {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   max-width: 1200px;
   width: 100%;
@@ -15,19 +16,24 @@
   [gy~="wrap"] *,
   [gy~="wrap"] *::before,
   [gy~="wrap"] *::after {
+    -webkit-box-sizing: inherit;
     box-sizing: inherit; }
 
 [gy*="g"] {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
   margin-left: -8px;
   margin-right: -8px; }
 
 [gy*="c"] {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-box-flex: 0;
   -ms-flex: 0 0 100%;
@@ -65,19 +71,16 @@
 [gy-h~="g-top"] {
   -webkit-box-align: start;
   -ms-flex-align: start;
-  -ms-grid-row-align: flex-start;
   align-items: flex-start; }
 
 [gy-h~="g-middle"] {
   -webkit-box-align: center;
   -ms-flex-align: center;
-  -ms-grid-row-align: center;
   align-items: center; }
 
 [gy-h~="g-bottom"] {
   -webkit-box-align: end;
   -ms-flex-align: end;
-  -ms-grid-row-align: flex-end;
   align-items: flex-end; }
 
 [gy-h~="g-reverse"] {

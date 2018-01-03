@@ -114,25 +114,25 @@
     <pre class="doc-custom__source"><!--
     --><code>
         $gyVars: (
-            prefix          : gy,
-            helperPrefix    : gy-h,
-            wrapWidth       : 1400px,
-            wrapName        : wrap,
-            gridName        : g,
-            colName         : c,
-            colTot          : 12,
-            orderName       : order,
-            offsetName      : off,
-            gutter          : 16px, // total
-            colBottom       : 16px, // usually same as gutter
-            bpDivider       : '', // usually empty, see customization docs for more info
-            bp              : (
-                // careful: do not use the letter 'g' or 'c' here, it would break the grid
-                // because it's the gridName and colName
-                s       : 400px,
-                m       : 768px,
-                l       : 1100px
-            )
+          prefix          : gy,
+          helperPrefix    : gy-h,
+          wrapWidth       : 1400px,
+          wrapName        : wrap,
+          gridName        : g,
+          colName         : c,
+          colTot          : 12,
+          orderName       : order,
+          offsetName      : off,
+          gutter          : 16px, // total
+          colBottom       : 16px, // usually same as gutter
+          bpDivider       : '', // usually empty, see customization docs for more info
+          bp              : (
+            // careful: do not use the letter 'g' or 'c' here, it would break the grid
+            // because it's the gridName and colName
+            s       : 400px,
+            m       : 768px,
+            l       : 1100px
+          )
         );
       </code><!--
   --></pre>
@@ -147,9 +147,9 @@
     <pre class="doc-custom__source"><!--
     --><code>
         $gyVars: (
-            prefix          : data-gy,
-            helperPrefix    : data-gy-help,
-            ...
+          prefix          : data-gy,
+          helperPrefix    : data-gy-help,
+          ...
         );
       </code><!--
   --></pre>
@@ -161,21 +161,21 @@
     <pre class="doc-custom__source"><!--
     --><code>
         $gyVars: (
-            prefix          : class,
-            helperPrefix    : class,
+          prefix          : class,
+          helperPrefix    : class,
 
-            // Note: rename g to gridy or any other unique name
-            // to avoid collision with other classes
-            gridName        : gridy,
+          // Note: rename g to gridy or any other unique name
+          // to avoid collision with other classes
+          gridName        : gridy,
 
-            // Note: rename c to coly or any unique name
-            // to avoid collision with other classes
-            colName         : coly,
+          // Note: rename c to coly or any unique name
+          // to avoid collision with other classes
+          colName         : coly,
 
-            // this is needed otherwise the breakpoint
-            // would be attached to the class name therefore
-            // the class would be difficult to read
-            bpDivider       : '-'
+          // this is needed otherwise the breakpoint
+          // would be attached to the class name therefore
+          // the class would be difficult to read
+          bpDivider       : '-'
         );
       </code><!--
   --></pre>
@@ -202,11 +202,11 @@
     --><code>
         $gutter: 30px;
         $gyVars: (
-            ...
-            colTot          : 6,
-            gutter          : $gutter, // total
-            colBottom       : $gutter, // usually same as gutter
-            ...
+          ...
+          colTot          : 6,
+          gutter          : $gutter, // total
+          colBottom       : $gutter, // usually same as gutter
+          ...
         );
       </code><!--
   --></pre>
@@ -222,16 +222,37 @@
         // Also, remember not to use as breakpoint names
         // the reserved letters "g" and "c".
         $gyVars: (
-            ...
-            bp       : (
-                s    : 400px, // small
-                sl   : 580px, // small larger
-                m    : 768px, // medium
-                ml   : 992px, // medium larger
-                l    : 1100px // large
-                xl   : 1200px // extra large
-            )
+          ...
+          bp       : (
+            s    : 400px, // small
+            sl   : 580px, // small larger
+            m    : 768px, // medium
+            ml   : 992px, // medium larger
+            l    : 1100px // large
+            xl   : 1200px // extra large
+          )
         );
+      </code><!--
+  --></pre>
+
+    <p>
+      What about setting up <strong>multiple gutters</strong>?
+    </p>
+    <pre class="doc-custom__source"><!--
+    --><code>
+        // extend gridy to change the gutter
+        // note that this gutter will be applied
+        // only to direct children with '>', it will not cascade
+        @include gy-gutters($gyVars, 'small', 20px);
+        @include gy-gutters($gyVars, 'medium', 40px);
+
+        // usage
+        <div gy="g" gy-h="g-small-gutter">
+          <div gy="c">small gutter grid</div>
+        </div>
+        <div gy="g" gy-h="g-medium-gutter">
+          <div gy="c">medium gutter grid</div>
+        </div>
       </code><!--
   --></pre>
   </div>

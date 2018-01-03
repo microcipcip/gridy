@@ -365,6 +365,40 @@
 
 
 // ====================================================================
+// =custom gutter
+// ====================================================================
+
+@mixin gy-gutter($gyMap, $gutterSize, $gutter, $bp: '') {
+  $helperPrefix: map-get($gyMap, helperPrefix);
+  $prefix: map-get($gyMap, prefix);
+  $gridName: map-get($gyMap, gridName);
+  $colName: map-get($gyMap, colName);
+
+  $bp: if($bp != '', '-#{$bp}', '');
+  $gutterSize: if($gutterSize != '', '-#{$gutterSize}-', '-');
+  [#{$helperPrefix}~="#{$gridName}#{$gutterSize}gutter#{$bp}"][#{$prefix}*="#{$gridName}"] {
+    margin-left: -$gutter;
+    margin-right: -$gutter;
+    > [#{$prefix}*="#{$colName}"] {
+      padding-left: $gutter;
+      padding-right: $gutter;
+    }
+  }
+}
+
+@mixin gy-gutters($gyMap, $gutterSize, $gutter) {
+  $breakpoint: map-get($gyMap, bp);
+  @each $bp, $bpValue in $breakpoint {
+    @include gy-gutter($gyMap, $gutterSize, $gutter);
+    @include gy-mq($bpValue) {
+      @include gy-gutter($gyMap, $gutterSize, $gutter, $bp);
+    }
+  }
+}
+
+
+
+// ====================================================================
 // =generate all
 // ====================================================================
 
