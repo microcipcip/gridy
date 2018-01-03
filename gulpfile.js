@@ -166,7 +166,7 @@ gulp.task('js', function () {
     .pipe(plumber())
     .pipe(changed(path.dist.js))
     .pipe(concat('./scripts.js'))
-    .pipe(gulpif(!isDev, uglify({ preserveComments: 'some' })))
+    .pipe(gulpif(!isDev, uglify()))
     .pipe(header(projectInfo, { pkg: project }))
     .pipe(gulp.dest(path.dist.js));
   // move vendors and polyfill files in the dist folder
