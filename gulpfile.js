@@ -32,7 +32,7 @@ var project = {
     shortname: "Gridy", // do not add spaces or special chars (used on json)
     name: "Gridy",
     descr: "A Flexbox Gridy System",
-    version: "0.9.1",
+    version: "0.9.2",
     url: "https://microcipcip.github.io/gridy/",
     author: "http://www.jertix.org"
   },
